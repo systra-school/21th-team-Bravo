@@ -96,7 +96,7 @@ if (listSize > intShowLength) {
             <td id="headLeft">
               <!-- š‚µ‚Ì‚Æ‚­š@–ß‚éƒ{ƒ^ƒ“‚Å‰æ–Ê‘JˆÚŠ®—¹ -->
             	<html:form action="/tsukibetsuShiftNyuuryokuBack">
-              		<input type="submit" value="–ß‚é" class="bigButton" />
+              		<input type="submit" value="–ß‚é" class="smlButton" />
             	</html:form>
               <!-- <input value="–ß‚é" type="button" class="smlButton"
 						onclick="doSubmit('/kikin_test/tsukibetsuShiftNyuuryokuBackAction.do')" /> -->
