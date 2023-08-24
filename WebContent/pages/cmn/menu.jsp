@@ -6,16 +6,15 @@
 <%@taglib uri="http://struts.apache.org/tags-logic" prefix="logic"%>
 <%@taglib uri="http://struts.apache.org/tags-html" prefix="html"%>
 
-
 <html>
   <head>
     <meta http-equiv="Pragma" content="no-cache">
     <meta http-equiv="Cache-Control" content="no-cache">
     <meta http-equiv="Expires" content="Thu, 01 Dec 1994 16:00:00 GMT">
     <html:javascript formName="loginForm" />
-    <script type="text/javascript" src="/kikin/pages/js/common.js"></script>
-    <script type="text/javascript" src="/kikin/pages/js/checkCommon.js"></script>
-    <script type="text/javascript" src="/kikin/pages/js/message.js"></script>
+    <script type="text/javascript" src="/kikin_test/pages/js/common.js"></script>
+    <script type="text/javascript" src="/kikin_test/pages/js/checkCommon.js"></script>
+    <script type="text/javascript" src="/kikin_test/pages/js/message.js"></script>
 
     <title>メニュー画面</title>
     <link href="/kikin_test/pages/css/common.css" rel="stylesheet" type="text/css" />
@@ -43,6 +42,7 @@
             </td>
             <td id="headRight">
               <input value="ログアウト" type="button" class="smlButton"  onclick="logout()" />
+              
             </td>
           </tr>
         </table>
