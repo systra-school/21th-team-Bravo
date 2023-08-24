@@ -36,7 +36,7 @@ String color = "";
     }
     -->
     </script>
-    <title>あ勤務実績確認画面</title>
+    <title>勤務実績確認画面</title>
 
     <link href="/kikin_test/pages/css/common.css" rel="stylesheet" type="text/css" />
   </head>
