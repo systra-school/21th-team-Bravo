@@ -23,11 +23,14 @@
     <meta http-equiv="Pragma" content="no-cache">
     <meta http-equiv="Cache-Control" content="no-cache">
     <meta http-equiv="Expires" content="Thu, 01 Dec 1994 16:00:00 GMT">
-    <script type="text/javascript" src="/kikin/pages/js/common.js"></script>
-    <script type="text/javascript" src="/kikin/pages/js/checkCommon.js"></script>
-    <script type="text/javascript" src="/kikin/pages/js/message.js"></script>
+    <!-- 修正 oota_naoki
+    	javascriptのパスを正規なものに変更
+    	kikin → kikin_test
+      -->
+    <script type="text/javascript" src="/kikin_test/pages/js/common.js"></script>
+    <script type="text/javascript" src="/kikin_test/pages/js/checkCommon.js"></script>
+    <script type="text/javascript" src="/kikin_test/pages/js/message.js"></script>
     <script type="text/javascript" language="Javascript1.1">
-    <!--
     /**
      * 登録処理を行う
      */
@@ -56,7 +59,7 @@
           // 背景色をクリアする
           startTime.style.backgroundColor = 'white';
           endTime.style.backgroundColor = 'white';
-          breakTime.style.backgroundColor = 'white';
+          breakTime.style.backgroundColor = 'white';	
 
           if (!checkTime(varStartTime)) {
               var strArr = ['開始時間'];
@@ -98,12 +101,11 @@
         document.forms[0].submit();
     }
 
-    -->
     </script>
 
     <title>シフトマスタメンテナンス画面</title>
 
-    <link href="/kikin/pages/css/common.css" rel="stylesheet" type="text/css" />
+    <link href="/kikin_test/pages/css/common.css" rel="stylesheet" type="text/css" />
   </head>
   <body>
     <div id="wrapper">
