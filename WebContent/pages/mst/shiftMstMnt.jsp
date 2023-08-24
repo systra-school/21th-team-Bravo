@@ -28,7 +28,6 @@
     <script type="text/javascript" src="/kikin/pages/js/checkCommon.js"></script>
     <script type="text/javascript" src="/kikin/pages/js/message.js"></script>
     <script type="text/javascript" language="Javascript1.1">
-    <!--
     /**
      * チェックボックスがチェックされたら true、されていなければ false
      * param index 対象行番号
@@ -48,6 +47,13 @@
 
     /**
      * 新規登録画面へ
+     */
+     /*
+     修正 oota_naoki † パスを
+     C:\Java1\workspace\21th-team-Bravo\.settings\org.eclipse.wst.common.componentの
+     <property name="context-root" value="kikin_test"/> に合わせた
+     修正前 document.forms[0].action = "/kikin/shiftMstMntRegistInit.do";
+     修正後 document.forms[0].action = "/kikin_test/shiftMstMntRegistInit.do";
      */
     function shiftMstMntRegistInit() {
         document.forms[0].action = "/kikin_test/shiftMstMntRegistInit.do";
