@@ -51,8 +51,8 @@ if (listSize > intShowLength) {
     <script type="text/javascript" src="/kikin/pages/js/checkCommon.js"></script>
     <script type="text/javascript" src="/kikin/pages/js/message.js"></script>
     <script type="text/javascript" language="Javascript1.1">
-    <!--
-
+    
+    /* ☆メソッドがコメントアウトされてたのでコメントアウトを削除 */
     /**
      * 出勤希望反映
      */
@@ -80,9 +80,9 @@ if (listSize > intShowLength) {
      * サブウィンドウを開く
      */
     function openWindow(){
-        window.open("/kikin/shiftHanrei.do?param=", null, "menubar=no, toolbar=no, scrollbars=auto, resizable=yes, width=520px, height=650px");
+        window.open(" /kikin_test/shiftMstMntRegistInit.do?param=", null, "menubar=no, toolbar=no, scrollbars=auto, resizable=yes, width=520px, height=650px");
     }
-    -->
+    
     </script>
     <title>月別シフト入力画面</title>
 
@@ -94,7 +94,12 @@ if (listSize > intShowLength) {
         <table>
           <tr>
             <td id="headLeft">
-              <input value="戻る" type="button" class="smlButton"  onclick="doSubmit('/kikin/tsukibetsuShiftNyuuryokuBack.do')" />
+              <!-- ★しのとく★　戻るボタンで画面遷移完了 -->
+            	<html:form action="/tsukibetsuShiftNyuuryokuBack">
+              		<input type="submit" value="戻る" class="bigButton" />
+            	</html:form>
+              <!-- <input value="戻る" type="button" class="smlButton"
+						onclick="doSubmit('/kikin_test/tsukibetsuShiftNyuuryokuBackAction.do')" /> -->
             </td>
             <td id="headCenter">
               月別シフト入力
@@ -117,8 +122,8 @@ if (listSize > intShowLength) {
                                       value="key"
                                       label="value"/>
               </html:select>
-              <html:link href="/kikin/tsukibetsuShiftNyuuryokuPage.do?paging=back">前へ</html:link>
-              <html:link href="/kikin/tsukibetsuShiftNyuuryokuPage.do?paging=next">次へ</html:link>
+              <html:link href="/kikin_test/tsukibetsuShiftNyuuryokuPage.do?paging=back">前へ</html:link>
+              <html:link href="/kikin_test/tsukibetsuShiftNyuuryokuPage.do?paging=next">次へ</html:link>
               <bean:write name="tsukibetsuShiftNyuuryokuForm" property="cntPage"/>/
               <bean:write name="tsukibetsuShiftNyuuryokuForm" property="maxPage"/>
             </div>
@@ -278,6 +283,11 @@ if (listSize > intShowLength) {
                                                     property="shiftCmbMap"
                                                     value="key"
                                                     label="value"/>
+                                                    <!-- html:optionタグを追加して、ドロップダウンリストの選択肢を追加 -->
+                                                    <html:option value="maru">し</html:option>
+                                                    <html:option value="sankaku">の</html:option>
+                                                    <html:option value="shikaku">ざ</html:option>
+                                                    <html:option value="hoshi">き</html:option>
                             </html:select>
                           </td>
                           <td width="40px" align="center" valign="middle">
@@ -286,6 +296,11 @@ if (listSize > intShowLength) {
                                                     property="shiftCmbMap"
                                                     value="key"
                                                     label="value"/>
+                                                    
+                                                    <html:option value="maru">し</html:option>
+                                                    <html:option value="sankaku">の</html:option>
+                                                    <html:option value="shikaku">ざ</html:option>
+                                                    <html:option value="hoshi">き</html:option>
                             </html:select>
                           </td>
                           <td width="40px" align="center" valign="middle">
@@ -294,6 +309,11 @@ if (listSize > intShowLength) {
                                                     property="shiftCmbMap"
                                                     value="key"
                                                     label="value"/>
+                                                    
+                                                    <html:option value="maru">し</html:option>
+                                                    <html:option value="sankaku">の</html:option>
+                                                    <html:option value="shikaku">ざ</html:option>
+                                                    <html:option value="hoshi">き</html:option>
                             </html:select>
                           </td>
                           <td width="40px" align="center" valign="middle">
@@ -302,6 +322,11 @@ if (listSize > intShowLength) {
                                                     property="shiftCmbMap"
                                                     value="key"
                                                     label="value"/>
+                                                    
+                                                    <html:option value="maru">し</html:option>
+                                                    <html:option value="sankaku">の</html:option>
+                                                    <html:option value="shikaku">ざ</html:option>
+                                                    <html:option value="hoshi">き</html:option>
                             </html:select>
                           </td>
                           <td width="40px" align="center" valign="middle">
@@ -310,6 +335,11 @@ if (listSize > intShowLength) {
                                                     property="shiftCmbMap"
                                                     value="key"
                                                     label="value"/>
+                                                    
+                                                    <html:option value="maru">し</html:option>
+                                                    <html:option value="sankaku">の</html:option>
+                                                    <html:option value="shikaku">ざ</html:option>
+                                                    <html:option value="hoshi">き</html:option>
                             </html:select>
                           </td>
                           <td width="40px" align="center" valign="middle">
@@ -318,6 +348,11 @@ if (listSize > intShowLength) {
                                                     property="shiftCmbMap"
                                                     value="key"
                                                     label="value"/>
+                                                    
+                                                    <html:option value="maru">し</html:option>
+                                                    <html:option value="sankaku">の</html:option>
+                                                    <html:option value="shikaku">ざ</html:option>
+                                                    <html:option value="hoshi">き</html:option>
                             </html:select>
                           </td>
                           <td width="40px" align="center" valign="middle">
@@ -326,6 +361,11 @@ if (listSize > intShowLength) {
                                                     property="shiftCmbMap"
                                                     value="key"
                                                     label="value"/>
+                                                    
+                                                    <html:option value="maru">し</html:option>
+                                                    <html:option value="sankaku">の</html:option>
+                                                    <html:option value="shikaku">ざ</html:option>
+                                                    <html:option value="hoshi">き</html:option>
                             </html:select>
                           </td>
                           <td width="40px" align="center" valign="middle">
@@ -334,6 +374,11 @@ if (listSize > intShowLength) {
                                                     property="shiftCmbMap"
                                                     value="key"
                                                     label="value"/>
+                                                    
+                                                    <html:option value="maru">し</html:option>
+                                                    <html:option value="sankaku">の</html:option>
+                                                    <html:option value="shikaku">ざ</html:option>
+                                                    <html:option value="hoshi">き</html:option>
                             </html:select>
                           </td>
                           <td width="40px" align="center" valign="middle">
@@ -342,6 +387,11 @@ if (listSize > intShowLength) {
                                                     property="shiftCmbMap"
                                                     value="key"
                                                     label="value"/>
+                                                    
+                                                    <html:option value="maru">し</html:option>
+                                                    <html:option value="sankaku">の</html:option>
+                                                    <html:option value="shikaku">ざ</html:option>
+                                                    <html:option value="hoshi">き</html:option>
                             </html:select>
                           </td>
                           <td width="40px" align="center" valign="middle">
@@ -350,6 +400,11 @@ if (listSize > intShowLength) {
                                                     property="shiftCmbMap"
                                                     value="key"
                                                     label="value"/>
+                                                    
+                                                    <html:option value="maru">し</html:option>
+                                                    <html:option value="sankaku">の</html:option>
+                                                    <html:option value="shikaku">ざ</html:option>
+                                                    <html:option value="hoshi">き</html:option>
                             </html:select>
                           </td>
                           <td width="40px" align="center" valign="middle">
@@ -358,6 +413,11 @@ if (listSize > intShowLength) {
                                                     property="shiftCmbMap"
                                                     value="key"
                                                     label="value"/>
+                                                    
+                                                    <html:option value="maru">し</html:option>
+                                                    <html:option value="sankaku">の</html:option>
+                                                    <html:option value="shikaku">ざ</html:option>
+                                                    <html:option value="hoshi">き</html:option>
                             </html:select>
                           </td>
                           <td width="40px" align="center" valign="middle">
@@ -366,6 +426,11 @@ if (listSize > intShowLength) {
                                                     property="shiftCmbMap"
                                                     value="key"
                                                     label="value"/>
+                                                    
+                                                    <html:option value="maru">し</html:option>
+                                                    <html:option value="sankaku">の</html:option>
+                                                    <html:option value="shikaku">ざ</html:option>
+                                                    <html:option value="hoshi">き</html:option>
                             </html:select>
                           </td>
                           <td width="40px" align="center" valign="middle">
@@ -374,6 +439,11 @@ if (listSize > intShowLength) {
                                                     property="shiftCmbMap"
                                                     value="key"
                                                     label="value"/>
+                                                    
+                                                    <html:option value="maru">し</html:option>
+                                                    <html:option value="sankaku">の</html:option>
+                                                    <html:option value="shikaku">ざ</html:option>
+                                                    <html:option value="hoshi">き</html:option>
                             </html:select>
                           </td>
                           <td width="40px" align="center" valign="middle">
@@ -382,6 +452,11 @@ if (listSize > intShowLength) {
                                                     property="shiftCmbMap"
                                                     value="key"
                                                     label="value"/>
+                                                    
+                                                    <html:option value="maru">し</html:option>
+                                                    <html:option value="sankaku">の</html:option>
+                                                    <html:option value="shikaku">ざ</html:option>
+                                                    <html:option value="hoshi">き</html:option>
                             </html:select>
                           </td>
                           <td width="40px" align="center" valign="middle">
@@ -390,6 +465,11 @@ if (listSize > intShowLength) {
                                                     property="shiftCmbMap"
                                                     value="key"
                                                     label="value"/>
+                                                    
+                                                    <html:option value="maru">し</html:option>
+                                                    <html:option value="sankaku">の</html:option>
+                                                    <html:option value="shikaku">ざ</html:option>
+                                                    <html:option value="hoshi">き</html:option>
                             </html:select>
                           </td>
                           <td width="40px" align="center" valign="middle">
@@ -398,6 +478,11 @@ if (listSize > intShowLength) {
                                                     property="shiftCmbMap"
                                                     value="key"
                                                     label="value"/>
+                                                    
+                                                    <html:option value="maru">し</html:option>
+                                                    <html:option value="sankaku">の</html:option>
+                                                    <html:option value="shikaku">ざ</html:option>
+                                                    <html:option value="hoshi">き</html:option>
                             </html:select>
                           </td>
                           <td width="40px" align="center" valign="middle">
@@ -406,6 +491,11 @@ if (listSize > intShowLength) {
                                                     property="shiftCmbMap"
                                                     value="key"
                                                     label="value"/>
+                                                    
+                                                    <html:option value="maru">し</html:option>
+                                                    <html:option value="sankaku">の</html:option>
+                                                    <html:option value="shikaku">ざ</html:option>
+                                                    <html:option value="hoshi">き</html:option>
                             </html:select>
                           </td>
                           <td width="40px" align="center" valign="middle">
@@ -414,6 +504,11 @@ if (listSize > intShowLength) {
                                                     property="shiftCmbMap"
                                                     value="key"
                                                     label="value"/>
+                                                    
+                                                    <html:option value="maru">し</html:option>
+                                                    <html:option value="sankaku">の</html:option>
+                                                    <html:option value="shikaku">ざ</html:option>
+                                                    <html:option value="hoshi">き</html:option>
                             </html:select>
                           </td>
                           <td width="40px" align="center" valign="middle">
@@ -422,6 +517,11 @@ if (listSize > intShowLength) {
                                                     property="shiftCmbMap"
                                                     value="key"
                                                     label="value"/>
+                                                    
+                                                    <html:option value="maru">し</html:option>
+                                                    <html:option value="sankaku">の</html:option>
+                                                    <html:option value="shikaku">ざ</html:option>
+                                                    <html:option value="hoshi">き</html:option>
                             </html:select>
                           </td>
                           <td width="40px" align="center" valign="middle">
@@ -430,6 +530,11 @@ if (listSize > intShowLength) {
                                                     property="shiftCmbMap"
                                                     value="key"
                                                     label="value"/>
+                                                    
+                                                    <html:option value="maru">し</html:option>
+                                                    <html:option value="sankaku">の</html:option>
+                                                    <html:option value="shikaku">ざ</html:option>
+                                                    <html:option value="hoshi">き</html:option>
                             </html:select>
                           </td>
                           <td width="40px" align="center" valign="middle">
@@ -438,6 +543,11 @@ if (listSize > intShowLength) {
                                                     property="shiftCmbMap"
                                                     value="key"
                                                     label="value"/>
+                                                    
+                                                    <html:option value="maru">し</html:option>
+                                                    <html:option value="sankaku">の</html:option>
+                                                    <html:option value="shikaku">ざ</html:option>
+                                                    <html:option value="hoshi">き</html:option>
                             </html:select>
                           </td>
                           <td width="40px" align="center" valign="middle">
@@ -446,6 +556,11 @@ if (listSize > intShowLength) {
                                                     property="shiftCmbMap"
                                                     value="key"
                                                     label="value"/>
+                                                    
+                                                    <html:option value="maru">し</html:option>
+                                                    <html:option value="sankaku">の</html:option>
+                                                    <html:option value="shikaku">ざ</html:option>
+                                                    <html:option value="hoshi">き</html:option>
                             </html:select>
                           </td>
                           <td width="40px" align="center" valign="middle">
@@ -454,6 +569,11 @@ if (listSize > intShowLength) {
                                                     property="shiftCmbMap"
                                                     value="key"
                                                     label="value"/>
+                                                    
+                                                    <html:option value="maru">し</html:option>
+                                                    <html:option value="sankaku">の</html:option>
+                                                    <html:option value="shikaku">ざ</html:option>
+                                                    <html:option value="hoshi">き</html:option>
                             </html:select>
                           </td>
                           <td width="40px" align="center" valign="middle">
@@ -462,6 +582,11 @@ if (listSize > intShowLength) {
                                                     property="shiftCmbMap"
                                                     value="key"
                                                     label="value"/>
+                                                    
+                                                    <html:option value="maru">し</html:option>
+                                                    <html:option value="sankaku">の</html:option>
+                                                    <html:option value="shikaku">ざ</html:option>
+                                                    <html:option value="hoshi">き</html:option>
                             </html:select>
                           </td>
                           <td width="40px" align="center" valign="middle">
@@ -470,6 +595,11 @@ if (listSize > intShowLength) {
                                                     property="shiftCmbMap"
                                                     value="key"
                                                     label="value"/>
+                                                    
+                                                    <html:option value="maru">し</html:option>
+                                                    <html:option value="sankaku">の</html:option>
+                                                    <html:option value="shikaku">ざ</html:option>
+                                                    <html:option value="hoshi">き</html:option>
                             </html:select>
                           </td>
                           <td width="40px" align="center" valign="middle">
@@ -478,6 +608,11 @@ if (listSize > intShowLength) {
                                                     property="shiftCmbMap"
                                                     value="key"
                                                     label="value"/>
+                                                    
+                                                    <html:option value="maru">し</html:option>
+                                                    <html:option value="sankaku">の</html:option>
+                                                    <html:option value="shikaku">ざ</html:option>
+                                                    <html:option value="hoshi">き</html:option>
                             </html:select>
                           </td>
                           <td width="40px" align="center" valign="middle">
@@ -486,6 +621,11 @@ if (listSize > intShowLength) {
                                                     property="shiftCmbMap"
                                                     value="key"
                                                     label="value"/>
+                                                    
+                                                    <html:option value="maru">し</html:option>
+                                                    <html:option value="sankaku">の</html:option>
+                                                    <html:option value="shikaku">ざ</html:option>
+                                                    <html:option value="hoshi">き</html:option>
                             </html:select>
                           </td>
                           <% if (dateBeanListSize >= 28) { %>
@@ -495,6 +635,11 @@ if (listSize > intShowLength) {
                                                     property="shiftCmbMap"
                                                     value="key"
                                                     label="value"/>
+                                                    
+                                                    <html:option value="maru">し</html:option>
+                                                    <html:option value="sankaku">の</html:option>
+                                                    <html:option value="shikaku">ざ</html:option>
+                                                    <html:option value="hoshi">き</html:option>
                             </html:select>
                           </td>
                           <% } %>
@@ -505,6 +650,11 @@ if (listSize > intShowLength) {
                                                     property="shiftCmbMap"
                                                     value="key"
                                                     label="value"/>
+                                                    
+                                                    <html:option value="maru">し</html:option>
+                                                    <html:option value="sankaku">の</html:option>
+                                                    <html:option value="shikaku">ざ</html:option>
+                                                    <html:option value="hoshi">き</html:option>
                             </html:select>
                           </td>
                           <% } %>
@@ -515,6 +665,11 @@ if (listSize > intShowLength) {
                                                     property="shiftCmbMap"
                                                     value="key"
                                                     label="value"/>
+                                                    
+                                                    <html:option value="maru">し</html:option>
+                                                    <html:option value="sankaku">の</html:option>
+                                                    <html:option value="shikaku">ざ</html:option>
+                                                    <html:option value="hoshi">き</html:option>
                             </html:select>
                           </td>
                           <% } %>
@@ -525,6 +680,11 @@ if (listSize > intShowLength) {
                                                     property="shiftCmbMap"
                                                     value="key"
                                                     label="value"/>
+                                                    
+                                                    <html:option value="maru">し</html:option>
+                                                    <html:option value="sankaku">の</html:option>
+                                                    <html:option value="shikaku">ざ</html:option>
+                                                    <html:option value="hoshi">き</html:option>
                             </html:select>
                           </td>
                           <% } %>
