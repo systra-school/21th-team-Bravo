@@ -126,7 +126,7 @@
         <table>
           <tr>
             <td id="headLeft">
-              <input value="戻る" type="button" class="smlButton"  onclick="doSubmit('/kikin/shainMstMntBack.do')" />
+              <input value="戻る" type="button" class="smlButton"  onclick="doSubmit('/kikin_test/shainMstMntBack.do')" />
             </td>
             <td id="headCenter">
               社員マスタメンテナンス
