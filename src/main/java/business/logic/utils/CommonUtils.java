@@ -151,12 +151,31 @@ public class CommonUtils {
         // 作成ＩＤ
         StringBuffer newId = new StringBuffer();
 
+        /*変更
+         * 変更前
+         * newId.append(M_shift.SHIFT_ID.getName());
+         * 
+         * 変更後
+         * newId.append(M_shift.PREFIX.getName());
+         * */
+        
+        /*修正 oota_naoki
+         * ID作成の接頭辞(PREFIX/値 SF等)を append する処理に
+         * SHIFT_IDをappendしていた。
+         * 対策：既定の文字列 [M_shift.PREFIX.getName()]をappendした。
+         * 
+         * 変更前
+         * newId.append(M_shift.SHIFT_ID.getName());
+         * 
+         * 変更後
+         * newId.append(M_shift.PREFIX.getName());
+         */
         if (M_shain.TABLE_NAME.getName().equals(tableName)) {
             // 社員マスタ
             newId.append(M_shain.PREFIX.getName());
         } else if (M_shift.TABLE_NAME.getName().equals(tableName)) {
             // シフトマスタ
-            newId.append(M_shift.SHIFT_ID.getName());
+            newId.append(M_shift.PREFIX.getName());
         }
 
         newId.append(id);
@@ -177,8 +196,6 @@ public class CommonUtils {
         if (CheckUtils.isEmpty(maxId)) {
             throw new CommonException("ＩＤが存在しない");
         }
-
-        // ＩＤの数字部分
         String numId = maxId.substring(2, 6);
         int intNumId = Integer.parseInt(numId);
 
