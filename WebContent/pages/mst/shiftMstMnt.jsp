@@ -242,7 +242,7 @@
             </td>
             <td id="footRight">
               <input value="V‹K“o˜^" type="button" class="smlButton"  onclick="shiftMstMntRegistInit()" />
-              <input value="XV" type="button" class="smlButton"  onclick="shiftMstMntUpdate()" />
+              <input value="“o˜^" type="button" class="smlButton"  onclick="shiftMstMntUpdate()" />
             </td>
           </tr>
         </table>
