@@ -50,7 +50,7 @@
      * V‹K“o˜^‰æ–Ê‚Ö
      */
     function shainMstMntRegistInit() {
-        document.forms[0].action = "/kikin/shainMstMntRegistInit.do";
+        document.forms[0].action = "/kikin_test/shainMstMntRegistInit.do";
         document.forms[0].submit();
     }
 
