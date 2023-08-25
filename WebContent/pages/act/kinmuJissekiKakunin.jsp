@@ -46,7 +46,7 @@ String color = "";
         <table width="100%">
           <tr>
             <td id="headLeft">
-              <input value="ñﬂÇÈ" type="button" class="smlButton"  onclick="doSubmit('/kikin/kinmuJissekiKakuninBack.do')" />
+              <input value="ñﬂÇÈ" type="button" class="smlButton"  onclick="doSubmit('/kikin_test/kinmuJissekiKakuninBack.do')" />
             </td>
             <td id="headCenter">
               ãŒñ±é¿ê—ämîF

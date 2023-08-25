@@ -124,7 +124,7 @@
         <table width="100%">
           <tr>
             <td id="headLeft">
-              <input value="ñﬂÇÈ" type="button" class="smlButton"  onclick="doSubmit('/kikin/kinmuJissekiNyuryokuKakuninBack.do')" />
+              <input value="ñﬂÇÈ" type="button" class="smlButton"  onclick="doSubmit('/kikin_test/kinmuJissekiNyuryokuKakuninBack.do')" />
             </td>
             <td id="headCenter">
               ãŒñ±é¿ê—ì¸óÕ

@@ -57,7 +57,7 @@
         <table>
           <tr>
             <td id="headLeft">
-              <input value="ñﬂÇÈ" type="button" class="smlButton"  onclick="doSubmit('/kikin/shukkinKibouKakuninBack.do')" />
+              <input value="ñﬂÇÈ" type="button" class="smlButton"  onclick="doSubmit('/kikin_test/shukkinKibouKakuninBack.do')" />
             </td>
             <td id="headCenter">
               èoãŒäÛñ]ämîF
