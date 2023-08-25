@@ -113,7 +113,7 @@
         <table>
           <tr>
             <td id="headLeft">
-              <input value="戻る" type="button" class="smlButton"  onclick="doSubmit('/kikin/shiftMstMntRegistBack.do')" />
+              <input value="戻る" type="button" class="smlButton"  onclick="doSubmit('/kikin_test/shiftMstMntRegistBack.do')" />
             </td>
             <td id="headCenter">
               シフトマスタメンテナンス（新規登録）
