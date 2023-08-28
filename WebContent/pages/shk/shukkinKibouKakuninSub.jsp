@@ -34,15 +34,15 @@ String color = "";
     <script type="text/javascript" src="/kikin/pages/js/checkCommon.js"></script>
     <script type="text/javascript" src="/kikin/pages/js/message.js"></script>
     <script type="text/javascript" language="Javascript1.1">
-    <!--
+   
 
     /**
      * ŒŸõ
      */
-    function submitSearch() {
-        doSubmit('/kikin/shukkinKibouKakuninSubSearch.do');
-    }
-    -->
+     function submitSearch() {
+         doSubmit('/kikin_test/kinmuJissekiKakuninSearch.do');
+     }
+  
     </script>
     <title>o‹ÎŠó–]Šm”F‰æ–Ê</title>
 

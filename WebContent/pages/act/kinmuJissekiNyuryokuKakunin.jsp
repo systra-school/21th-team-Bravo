@@ -109,7 +109,7 @@
      * åüçı
      */
     function submitSearch() {
-        doSubmit('/kikin/kinmuJissekiNyuryokuKakuninSearch.do');
+        doSubmit('/kikin_test/kinmuJissekiNyuryokuKakuninSearch.do');
     }
     
     

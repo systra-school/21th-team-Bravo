@@ -59,15 +59,15 @@ if (listSize > intShowLength) {
         // サブミット
         doSubmit('/kikin_test/tsukibetsuShiftKakuninPrint.do');
     }
-     <!--
+  
 
     /**
      * 検索
      */
     function submitSearch() {
-        doSubmit('/kikin/tsukibetsuShiftKakuninSearch.do');
+        doSubmit('/kikin_test/tsukibetsuShiftKakuninSearch.do');
     }
-     -->
+ 
     /**
      * サブウィンドウを開く
      */
@@ -109,8 +109,8 @@ if (listSize > intShowLength) {
                                       value="key"
                                       label="value"/>
               </html:select>
-              <html:link href="/kikin/tsukibetsuShiftKakuninPage.do?paging=back">前へ</html:link>
-              <html:link href="/kikin/tsukibetsuShiftKakuninPage.do?paging=next">次へ</html:link>
+              <html:link href="/kikin_test/tsukibetsuShiftKakuninPage.do?paging=back">前へ</html:link>
+              <html:link href="/kikin_test/tsukibetsuShiftKakuninPage.do?paging=next">次へ</html:link>
               <bean:write name="tsukibetsuShiftKakuninForm" property="cntPage"/>/
               <bean:write name="tsukibetsuShiftKakuninForm" property="maxPage"/>
             </div>

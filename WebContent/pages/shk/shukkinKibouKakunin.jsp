@@ -37,7 +37,7 @@
      * 検索
      */
     function submitSearch() {
-        doSubmit('/kikinn_test/shukkinKibouKakuninSearch.do');
+        doSubmit('/kikin_test/shukkinKibouKakuninSearch.do');
     }
     /**
      * サブウィンドウを開く
