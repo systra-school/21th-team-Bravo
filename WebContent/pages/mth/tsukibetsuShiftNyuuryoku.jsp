@@ -95,11 +95,11 @@ if (listSize > intShowLength) {
           <tr>
             <td id="headLeft">
               <!-- ★しのとく★　戻るボタンで画面遷移完了 -->
-            	<html:form action="/tsukibetsuShiftNyuuryokuBack">
+            	<!--<html:form action="/tsukibetsuShiftNyuuryokuBack">
               		<input type="submit" value="戻る" class="smlButton" />
-            	</html:form>
-              <!-- <input value="戻る" type="button" class="smlButton"
-						onclick="doSubmit('/kikin_test/tsukibetsuShiftNyuuryokuBackAction.do')" /> -->
+            	</html:form>-->
+              <input value="戻る" type="button" class="smlButton"
+						onclick="doSubmit('/kikin_test/tsukibetsuShiftNyuuryokuBack.do')" />
             </td>
             <td id="headCenter">
               月別シフト入力
