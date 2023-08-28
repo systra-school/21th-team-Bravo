@@ -51,15 +51,15 @@ if (listSize > intShowLength) {
     <script type="text/javascript" src="/kikin_test/pages/js/checkCommon.js"></script>
     <script type="text/javascript" src="/kikin_test/pages/js/message.js"></script>
     <script type="text/javascript" language="Javascript1.1">
-    <!--
 
     /**
      * 登録
      */
     function submitPrint() {
         // サブミット
-        doSubmit('/kikin/tsukibetsuShiftKakuninPrint.do');
+        doSubmit('/kikin_test/tsukibetsuShiftKakuninPrint.do');
     }
+     <!--
 
     /**
      * 検索
