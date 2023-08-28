@@ -58,7 +58,7 @@ if (listSize > intShowLength) {
      */
     function submitShukkinKibou() {
         // サブミット
-        doSubmit('/kikin/tsukibetsuShiftNyuuryokuShukkinKibou.do');
+        doSubmit('/kikin_test/tsukibetsuShiftNyuuryokuShukkinKibou.do');
     }
 
     /**
@@ -66,14 +66,14 @@ if (listSize > intShowLength) {
      */
     function submitRegist() {
         // サブミット
-        doSubmit('/kikin/tsukibetsuShiftNyuuryokuRegist.do');
+        doSubmit('/kikin_test/tsukibetsuShiftNyuuryokuRegist.do');
     }
 
     /**
      * 検索
      */
     function submitSearch() {
-        doSubmit('/kikin/tsukibetsuShiftNyuuryokuSearch.do');
+        doSubmit('/kikin_test/tsukibetsuShiftNyuuryokuSearch.do');
     }
 
     /**
