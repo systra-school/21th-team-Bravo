@@ -32,7 +32,7 @@
      */
     function regist() {
         // サブミット
-        doSubmit('/kikin/kihonShiftRegist.do');
+        doSubmit('/kikin_test/kihonShiftRegist.do');
     }
     </script>
 
