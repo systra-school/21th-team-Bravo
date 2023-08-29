@@ -20,11 +20,11 @@
     <meta http-equiv="Pragma" content="no-cache">
     <meta http-equiv="Cache-Control" content="no-cache">
     <meta http-equiv="Expires" content="Thu, 01 Dec 1994 16:00:00 GMT">
-    <script type="text/javascript" src="/kikin/pages/js/common.js">
+    <script type="text/javascript" src="/kikin_test/pages/js/common.js">
     </script>
-    <script type="text/javascript" src="/kikin/pages/js/checkCommon.js">
+    <script type="text/javascript" src="/kikin_test/pages/js/checkCommon.js">
     </script>
-    <script type="text/javascript" src="/kikin/pages/js/message.js">
+    <script type="text/javascript" src="/kikin_test/pages/js/message.js">
     </script>
     <script type="text/javascript" language="Javascript1.1">
     /**
@@ -47,7 +47,7 @@
         <table>
           <tr>
             <td id="headLeft">
-              <input value="戻る" type="button" class="smlButton"  onclick="doSubmit('/kikin/kihonShiftBack.do')" />
+              <input value="戻る" type="button" class="smlButton"  onclick="doSubmit('/kikin_test/kihonShiftBack.do')" />
             </td>
             <td id="headCenter">
               基本シフト確認
