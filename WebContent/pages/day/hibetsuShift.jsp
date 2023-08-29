@@ -94,9 +94,9 @@
           <html:form>
             <div style="height: 20px">
               表示年月：
-              <html:link href="/kikin/hibetsuShiftPage.do?paging=back">前日</html:link>
+              <html:link href="/kikin_test/hibetsuShiftPage.do?paging=back">前日</html:link>
               <bean:write name="hibetsuShiftForm" property="yearMonthDayDisp"/>
-              <html:link href="/kikin/hibetsuShiftPage.do?paging=next">翌日</html:link>
+              <html:link href="/kikin_test/hibetsuShiftPage.do?paging=next">翌日</html:link>
             </div>
             <table border="0" cellpadding="0" cellspacing="0">
               <tr>
