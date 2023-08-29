@@ -80,7 +80,7 @@ if (listSize > intShowLength) {
      * サブウィンドウを開く
      */
     function openWindow(){
-        window.open(" /kikin_test/shiftMstMntRegistInit.do?param=", null, "menubar=no, toolbar=no, scrollbars=auto, resizable=yes, width=520px, height=650px");
+        window.open("/kikin_test/shiftHanrei.do?param=", null, "menubar=no, toolbar=no, scrollbars=auto, resizable=yes, width=520px, height=650px");
     }
     
     </script>
