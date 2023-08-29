@@ -101,7 +101,7 @@
 			}
 			
 			if(!errorMsg) {
-				doSubmit('/kikin/kinmuJissekiNyuryokuKakuninRegist.do');
+				doSubmit('/kikin_test/kinmuJissekiNyuryokuKakuninRegist.do');
 			}
      	}	
     }

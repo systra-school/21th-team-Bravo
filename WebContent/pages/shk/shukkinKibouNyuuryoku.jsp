@@ -31,14 +31,12 @@
     <script type="text/javascript" src="/kikin_test/pages/js/checkCommon.js"></script>
     <script type="text/javascript" src="/kikin_test/pages/js/message.js"></script>
     <script type="text/javascript" language="Javascript1.1">
-    <!--
-
     /**
      * 出勤希望反映
      */
     function submitShukkinKibou() {
         // サブミット
-        doSubmit('/kikin/tsukibetsuShiftNyuuryokuShukkinKibou.do');
+        doSubmit('/kikin_test/tsukibetsuShiftNyuuryokuShukkinKibou.do');
     }
 
     /**
@@ -46,16 +44,15 @@
      */
     function submitRegist() {
         // サブミット
-        doSubmit('/kikin/syukkinKibouNyuuryokuRegist.do');
+        doSubmit('/kikin_test/syukkinKibouNyuuryokuRegist.do');
     }
 
     /**
      * 検索
      */
     function submitSearch() {
-        doSubmit('/kikin/tsukibetsuShiftNyuuryokuSearch.do');
+        doSubmit('/kikin_test/tsukibetsuShiftNyuuryokuSearch.do');
     }
-    -->
     /**
      * サブウィンドウを開く
      */
