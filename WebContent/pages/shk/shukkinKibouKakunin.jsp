@@ -78,8 +78,8 @@
                                     value="key"
                                     label="value"/>
             </html:select>
-            <html:link href="/kikin/shukkinKibouKakuninPage.do?paging=back">‘O‚Ö</html:link>
-            <html:link href="/kikin/shukkinKibouKakuninPage.do?paging=next">ŽŸ‚Ö</html:link>
+            <html:link href="/kikin_test/shukkinKibouKakuninPage.do?paging=back">‘O‚Ö</html:link>
+            <html:link href="/kikin_test/shukkinKibouKakuninPage.do?paging=next">ŽŸ‚Ö</html:link>
             <bean:write name="shukkinKibouKakuninForm" property="cntPage"/>/
             <bean:write name="shukkinKibouKakuninForm" property="maxPage"/>
             
