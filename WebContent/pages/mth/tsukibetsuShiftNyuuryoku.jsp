@@ -21,24 +21,25 @@
 
 <bean:size id="dateBeanListSize" name="tsukibetsuShiftNyuuryokuForm" property="dateBeanList"/>
 <bean:size id="listSize" name="tsukibetsuShiftNyuuryokuForm" property="tsukibetsuShiftNyuuryokuBeanList"/>
-<bean:define id="showLength" value="17" type="java.lang.String"/>
+<bean:define id="showLength" value="16" type="java.lang.String"/>
 <bean:define id="offset" name="tsukibetsuShiftNyuuryokuForm" property="offset" />
 <bean:define id="color" value="" type="java.lang.String"/>
 <bean:define id="cntPage" name="tsukibetsuShiftNyuuryokuForm" property="cntPage" type="java.lang.Integer"/>
 <bean:define id="maxPage" name="tsukibetsuShiftNyuuryokuForm" property="maxPage" type="java.lang.Integer"/>
 
 <%
-final int heightSize = 22;
+// 高さ指定変更
+final int heightSize = 26;
 
 int intShowLength = Integer.parseInt(showLength);
 
-// 表示しているリストサイズの調整
+//表示しているリストサイズの調整
 if (cntPage.intValue() == maxPage.intValue()) {
-    listSize = listSize % intShowLength;
+ listSize = listSize % intShowLength;
 }
 
 if (listSize > intShowLength) {
-    listSize = intShowLength;
+ listSize = intShowLength;
 }
 
 %>
@@ -110,9 +111,11 @@ if (listSize > intShowLength) {
           </tr>
         </table>
       </div>
-      <div id="gymBody" style="overflow: hidden;">
+      <%-- 表のズレ調整 --%>
+      <div id="gymBody" style="overflow: auto;">
         <html:form action="/tsukibetsuShiftNyuuryokuPage" >
-          <div style="margin-left:50px;">
+       	 <%-- 表のズレ調整 --%>
+          <div style="margin-left:80px;">
             <div style="height: 25px;">
               表示年月：
               <bean:define id="sessionYearMonth" name="tsukibetsuShiftNyuuryokuForm" property="yearMonth" type="String"/>
