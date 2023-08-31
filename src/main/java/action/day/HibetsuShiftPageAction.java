@@ -20,9 +20,7 @@ import org.apache.struts.action.ActionMapping;
 
 import business.dto.day.HibetsuShiftDto;
 import business.logic.day.HibetsuShiftLogic;
-import business.logic.utils.CheckUtils;
 import business.logic.utils.CommonUtils;
-
 import constant.CommonConstant;
 import form.day.HibetsuShiftForm;
 
@@ -83,9 +81,9 @@ public class HibetsuShiftPageAction extends HibetsuShiftAbstractAction {
             hibetsuShiftDtoList = hibetsuShiftLogic.getHibetsuShiftDtoList(yearMonthDay);
         }
 
-        if (CheckUtils.isEmpty(hibetsuShiftDtoList)) {
-            forward = CommonConstant.NODATA;
-        }
+//        if (CheckUtils.isEmpty(hibetsuShiftDtoList)) {
+//            forward = CommonConstant.NODATA;
+//        }
 
         // フォームへ一覧をセットする
         hibetsuShiftForm.setHibetsuShiftBeanList(dtoToForm(hibetsuShiftDtoList));
