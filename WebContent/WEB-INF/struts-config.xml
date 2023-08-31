@@ -373,6 +373,24 @@
         validate="false">
         <forward name="success" path="/pages/cmn/menu.jsp" />
       </action>
+      <!-- 基本シフト反映 -->
+      <!-- 新規作成 oota_naoki -->
+      <!-- 見本
+      <action
+        path="/tsukibetsuShiftNyuuryokuShukkinKibou"
+        type="action.mth.TsukibetsuShiftNyuuryokuKibouHaneiAction"
+        name="tsukibetsuShiftNyuuryokuForm"
+        scope="session">
+        <forward name="success" path="/pages/mth/tsukibetsuShiftNyuuryoku.jsp"/>
+      </action>
+       -->
+      <action
+        path="/tsukibetuShiftNyuuryokuKihonShift"
+        type="action.bse.KihonShiftHaneiAction"
+        name="tsukibetsuShiftNyuuryokuForm"
+        scope="session">
+        <forward name="success" path="/pages/mth/tsukibetsuShiftNyuuryoku.jsp"/>
+      </action>
 
       <!-- 月別シフト入力初期表示 -->
       <action

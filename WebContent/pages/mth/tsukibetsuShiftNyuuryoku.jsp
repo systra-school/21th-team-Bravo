@@ -61,6 +61,10 @@ if (listSize > intShowLength) {
         // ƒTƒuƒ~ƒbƒg
         doSubmit('/kikin_test/tsukibetsuShiftNyuuryokuShukkinKibou.do');
     }
+    
+    function submitKihonShift() {
+		doSubmit('/kikin_test/tsukibetuShiftNyuuryokuKihonShift.do');
+	}
 
     /**
      * “o˜^
@@ -704,7 +708,7 @@ if (listSize > intShowLength) {
       <div id="footer">
       <div style="margin-left:50px;">
           <input value="–}—á•\Ž¦" type="button" class="lngButton"  onclick="openWindow()" />
-          <input value="Šî–{ƒVƒtƒg”½‰f" type="button" class="lngButton"  />
+          <input value="Šî–{ƒVƒtƒg”½‰f" type="button" class="lngButton"  onclick="submitKihonShift()"/>
           <input value="o‹ÎŠó–]“ú”½‰f" type="button" class="lngButton"  onclick="submitShukkinKibou()" />
         </div>
         <table>
