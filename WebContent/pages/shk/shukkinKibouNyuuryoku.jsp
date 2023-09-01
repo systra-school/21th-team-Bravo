@@ -51,7 +51,8 @@
      * 検索
      */
     function submitSearch() {
-        doSubmit('/kikin_test/tsukibetsuShiftNyuuryokuSearch.do');
+        doSubmit('/kikin_test/shukkinKibouNyuuryokuSeach.do');
+        			//('/kikin_test/tsukibetsuShiftNyuuryokuSearch.do');
     }
     /**
      * サブウィンドウを開く
