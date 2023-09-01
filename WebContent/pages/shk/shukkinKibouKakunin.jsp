@@ -22,7 +22,8 @@
 <bean:size id="dateBeanListSize" name="shukkinKibouKakuninForm"  property="dateBeanList"/>
 <bean:define id="offset" name="shukkinKibouKakuninForm" property="offset" />
 <bean:define id="color" value="" type="java.lang.String"/>
-<bean:define id="showLength" value="19" type="java.lang.String"/>
+<bean:define id="showLength" value="18" type="java.lang.String"/>
+
 <html>
   <head>
     <meta http-equiv="Pragma" content="no-cache">
@@ -83,8 +84,8 @@
             <bean:write name="shukkinKibouKakuninForm" property="cntPage"/>/
             <bean:write name="shukkinKibouKakuninForm" property="maxPage"/>
             
-            <div style="overflow: auto; height: 450px; width: 1150px; margin-left:100px;" >
-              <table width="1100px" cellpadding="0" cellspacing="0">
+            <div style="overflow: hidden; height: 490px; width: 1150px; margin-left:100px;" >
+              <table width="1100px" height="100px" cellpadding="0" cellspacing="0">
                 <tr>
                   <td width="150px" valign="top">
                     <table border="1" cellpadding="0" cellspacing="0">
@@ -346,7 +347,7 @@
         </div>
       </div>
       <div id="footer">
-      	<div style="margin-left:50px;">
+      	<div style="margin: 50px 50px;">
             <input value="–}—á•\Ž¦" type="button" class="lngButton"  onclick="openWindow()" />
         </div>
         <table>
