@@ -439,6 +439,8 @@ public class CommonUtils {
             }
 
             StringBuffer dow = new StringBuffer();
+            String yearMonthDay = yearMonth.concat(strDay);
+            
             switch (calendar.get(Calendar.DAY_OF_WEEK)) {
               case Calendar.SUNDAY:
                   dow.append(DayOfWeek.SUNDAY.getRyaku());
@@ -469,8 +471,13 @@ public class CommonUtils {
                   dateBean.setYoubiEnum(DayOfWeek.SATURDAY);
                   break;
             }
+            //追加 ota_naoki
+            //祝日のアイコンを [祝] に変更
+            if(shukujitsuSet.contains(yearMonthDay)) {
+            	dow.setLength(0);
+            	dow.append("祝");
+            }
 
-            String yearMonthDay = yearMonth.concat(strDay);
             dateBean.setShukujitsuFlg(shukujitsuSet.contains(yearMonthDay));
             dateBean.setYearMonthDay(yearMonthDay);
             dateBean.setYoubi(dow.toString());
