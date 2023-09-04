@@ -80,6 +80,20 @@
 	     	            namedItem('kinmuJissekiNyuryokuKakuninList['+ i +'].breakTime').style.backgroundColor = 'red';
 	     	        }
 	     	     }
+	     	     
+	     	 // 時間が空白であるかをチェック
+	     	    if (startTime.trim() === '') {
+	     	        startTimeErrMsg = getMessage('E-MSG-000001', ['開始時間']);
+	     	        namedItem('kinmuJissekiNyuryokuKakuninList['+ i +'].startTime').style.backgroundColor = 'red';
+	     	    }
+	     	    if (endTime.trim() === '') {
+	     	        endTimeErrMsg = getMessage('E-MSG-000001', ['終了時間']);
+	     	        namedItem('kinmuJissekiNyuryokuKakuninList['+ i +'].endTime').style.backgroundColor = 'red';
+	     	    }
+	     	    if (breakTime.trim() === '') {
+	     	        breakTimeErrMsg = getMessage('E-MSG-000001', ['休憩時間']);
+	     	        namedItem('kinmuJissekiNyuryokuKakuninList['+ i +'].breakTime').style.backgroundColor = 'red';
+	     	    }
 
 	     	     // from - to のチェック
 	     	     if (!checkTimeCompare(startTime, endTime)) {
