@@ -33,7 +33,7 @@
     <script type="text/javascript" src="/kikin_test/pages/js/checkCommon.js"></script>
     <script type="text/javascript" src="/kikin_test/pages/js/message.js"></script>
     <script type="text/javascript" language="Javascript1.1">
-
+	<!--
     /**
      * 検索
      */
@@ -46,7 +46,7 @@
     function openWindow(){
         window.open("/kikin_test/shiftHanrei.do?param=", null, "menubar=no, toolbar=no, scrollbars=auto, resizable=yes, width=520px, height=650px");
     }
-    
+    -->
     </script>
     <title>出勤希望確認画面</title>
 
@@ -84,24 +84,24 @@
             <bean:write name="shukkinKibouKakuninForm" property="cntPage"/>/
             <bean:write name="shukkinKibouKakuninForm" property="maxPage"/>
             
-            <div style="overflow: hidden; height: 490px; width: 1150px; margin-left:100px;" >
-              <table width="1100px" height="100px" cellpadding="0" cellspacing="0">
+            <div style="overflow: visible; height: 500px; width: 1300px; " >
+              <table width="1500px" height="100px" cellpadding="0" cellspacing="0">
                 <tr>
-                  <td width="150px" valign="top">
+                  <td width="163px" valign="top">
                     <table border="1" cellpadding="0" cellspacing="0">
                       <tr class="tblHeader">
-                        <td width="150px" align="center">
+                        <td width="163px" align="center">
                           &nbsp;
                         </td>
                       </tr>
                       <tr class="tblHeader">
-                        <td width="150px" align="center">
+                        <td width="163px" align="center">
                         社員名
                         </td>
                       </tr>
                       <logic:iterate offset="offset" length="<%=showLength %>" id="shukkinKibouKakuninBeanList" name="shukkinKibouKakuninForm" property="shukkinKibouKakuninBeanList">
                         <tr class="tblBody">
-                          <td width="150px" align="center" class="tblBody">
+                          <td width="163px" align="center" class="tblBody">
                             <bean:write property="shainName" name="shukkinKibouKakuninBeanList"/><br>
                           </td>
                         </tr>
@@ -109,7 +109,7 @@
                     </table>
                   </td>
                   <td>
-                    <div style="overflow-x: auto;overflow-y: hidden; width:1067px;height: 100%; text-align:center;">
+                    <div style="overflow-x: auto;overflow-y: hidden; width:1160px;height: 100%; text-align:center;">
                       <table border="1" cellpadding="0" cellspacing="0">
                         <tr class="tblHeader">
                           <td width="40px" align="center" valign="middle">
@@ -347,7 +347,7 @@
         </div>
       </div>
       <div id="footer">
-      	<div style="margin: 50px 50px;">
+      	<div style="margin: 10px 50px;">
             <input value="凡例表示" type="button" class="lngButton"  onclick="openWindow()" />
         </div>
         <table>
