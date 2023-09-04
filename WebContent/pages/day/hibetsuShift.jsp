@@ -23,7 +23,7 @@
     int bodyRightDivHeight = 0;
     int bodyLeftDivHeight = 0;
     // ボディテーブルの td の幅
-    int tdWidth = 150;
+    int tdWidth = 175;
     // ボディテーブルの tr の縦
     int trHeight = 50;
     // 縦スクロールバーの幅
