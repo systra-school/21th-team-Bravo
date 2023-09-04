@@ -71,7 +71,7 @@ public class ShukkinKibouNyuuryokuSeachAction extends ShukkinKibouAbstractAction
 		TsukibetsuShiftNyuuryokuForm tsukibetsuShiftForm = (TsukibetsuShiftNyuuryokuForm) form;
 
 		// 対象年月
-		String yearMonth = tsukibetsuShiftForm.getYearMonth();
+		String yearMonth = CommonUtils.getFisicalDay(tsukibetsuShiftForm.getYearMonth());
 		//String yearMonth = CommonUtils.getFisicalDay(CommonConstant.yearMonthNoSl);
 
 		
