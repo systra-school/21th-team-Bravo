@@ -81,7 +81,8 @@
 
           // from - to のチェック
           if (!checkTimeCompare(varStartTime, varEndTime)) {
-            if (checkTime(startTime) && checkTime(endTime)) {
+        	  //checkTimeの参照先が違っていたのを修正　清田
+            if (checkTime(varStartTime) && checkTime(varEndTime)) {
                 fromToErrMsg = getMessageCodeOnly('E-MSG-000005');
                 startTime.style.backgroundColor = 'red';
                 endTime.style.backgroundColor = 'red';
