@@ -25,9 +25,9 @@ import business.dto.mst.ShainMstMntDto;
 import business.logic.mst.ShainMstMntLogic;
 import business.logic.utils.ComboListUtilLogic;
 import constant.CommonConstant;
-import constant.RequestSessionNameConstant;
 import constant.CommonConstant.BunruiId;
 import constant.DbConstant.Mbunrui;
+import constant.RequestSessionNameConstant;
 import form.mst.ShainMstMntRegistForm;
 
 /**
@@ -80,8 +80,10 @@ public class ShainMstMntRegistAction extends Action{
         // 取得したセレクトボックスのマップをフォームへセットする。
         shainMstMntRegistForm.setKengenCmbMap(comboMap);
 
-        // 登録
+        //m_shainの登録
         shainMstMntLogic.registMshain(mshainDto, loginUserDto);
+
+        //ソートを実行(基本シフト登録-登録参照)
 
         return mapping.findForward(forward);
     }

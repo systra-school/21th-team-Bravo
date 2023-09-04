@@ -71,6 +71,10 @@ public class TsukibetsuShiftNyuuryokuSearchAction extends TsukibetsuShiftNyuuryo
 
         // 対象年月
         String yearMonth = tsukibetsuShiftForm.getYearMonth();
+        
+        if(yearMonth.equals("202309")) {
+        	Object hoge = null;
+        }
 
         // ロジック生成
         TsukibetsuShiftLogic tsukibetsuShiftLogic = new TsukibetsuShiftLogic();

@@ -85,6 +85,7 @@ public class TsukibetsuShiftNyuuryokuKibouHaneiAction extends TsukibetsuShiftNyu
 
         // セレクトボックスの取得
         ComboListUtilLogic comboListUtils = new ComboListUtilLogic();
+        //m_SHIFT をオブジェクト化
         Map<String, String> shiftCmbMap = comboListUtils.getComboShift(true);
         Map<String, String> yearMonthCmbMap = comboListUtils.getComboYearMonth(CommonUtils.getFisicalDay(CommonConstant.yearMonthNoSl), 3, ComboListUtilLogic.KBN_YEARMONTH_NEXT, false);
 
@@ -149,7 +150,8 @@ public class TsukibetsuShiftNyuuryokuKibouHaneiAction extends TsukibetsuShiftNyu
 
             String shainId = "";
             String shainName = "";
-
+            
+            //ここで予定に変更があった場合は
             for (int i = 0; i < methods.length; i++) {
                 // "setShiftIdXX" のメソッドを動的に実行する
                 if (methods[i].getName().startsWith("setShiftId") && listSize > index) {
@@ -166,7 +168,7 @@ public class TsukibetsuShiftNyuuryokuKibouHaneiAction extends TsukibetsuShiftNyu
 
             tsukibetsuShiftBean.setShainId(shainId);
             tsukibetsuShiftBean.setShainName(shainName);
-            tsukibetsuShiftBean.setRegistFlg(false);
+            tsukibetsuShiftBean.setRegistFlg(true);
 
             tsukibetsuShiftBeanList.add(tsukibetsuShiftBean);
 
