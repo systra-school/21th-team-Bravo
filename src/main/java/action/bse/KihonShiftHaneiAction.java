@@ -69,9 +69,13 @@ public class KihonShiftHaneiAction extends TsukibetsuShiftNyuuryokuAbstractActio
 
         // フォーム
         TsukibetsuShiftNyuuryokuForm tsukibetsuShiftForm = (TsukibetsuShiftNyuuryokuForm) form;
-
+        
+        //修正 ota_naoki
+        //修正前
+        // String yearMonth = CommonUtils.getFisicalDay(CommonConstant.yearMonthNoSl);
+        //CommonConstant.yearMonthNoSl) ... 現在年月を yyyymm 形式で取得
         // 対象年月
-        String yearMonth = CommonUtils.getFisicalDay(CommonConstant.yearMonthNoSl);
+        String yearMonth = CommonUtils.getFisicalDay(tsukibetsuShiftForm.getYearMonth());
 
         // ロジック生成(基本シフト)
         KihonShiftLogic kihonShiftLogic = new KihonShiftLogic();
