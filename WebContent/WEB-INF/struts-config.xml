@@ -435,7 +435,7 @@
       
       <action
         path="/syukkinKibouNyuuryokuRegist"
-        type="action.mth.TsukibetsuShiftNyuuryokuRegistAction"
+        type="action.shk.ShukkinKibouNyuuryokuRegistAction"
         name="tsukibetsuShiftNyuuryokuForm"
         scope="session">
         <forward name="success" path="/pages/shk/shukkinKibouNyuuryoku.jsp"/>

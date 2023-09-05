@@ -15,15 +15,15 @@ import java.util.List;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
-import constant.DbConstant.M_shain;
-import constant.DbConstant.M_shift;
-import constant.DbConstant.T_Shift;
-
 import business.db.dao.AbstractDao;
 import business.dto.LoginUserDto;
+import business.dto.mth.TsukibetsuShiftDto;
 import business.dto.shk.ShukkinKibouKakuninDto;
 import business.dto.shk.ShukkinKibouNyuuryokuDto;
 import business.logic.utils.CommonUtils;
+import constant.DbConstant.M_shain;
+import constant.DbConstant.M_shift;
+import constant.DbConstant.T_Shift;
 
 /**
  * 説明：出勤希望処理のDao
@@ -112,6 +112,7 @@ public class ShukkinKibouDao extends AbstractDao{
             this.connect();
 
             StringBuffer strSql = new StringBuffer();
+            //ここをベースに下部のサブクエリと結合
             strSql.append("SELECT ");
             strSql.append("MSHAIN.SHAIN_ID, ");
             strSql.append("MSHAIN.SHAIN_NAME, ");
@@ -121,6 +122,8 @@ public class ShukkinKibouDao extends AbstractDao{
             strSql.append("FROM ");
             strSql.append("M_SHAIN MSHAIN ");
             strSql.append("LEFT OUTER JOIN ");
+            
+            //サブクエリでM_SHIFTベースでT_SHIFTと外部結合
             strSql.append("(SELECT ");
             strSql.append("SHAIN_ID, ");
             strSql.append("KIBOU_SHIFT_ID, ");
@@ -129,8 +132,12 @@ public class ShukkinKibouDao extends AbstractDao{
             strSql.append("FROM ");
             strSql.append("T_SHIFT TSHIFT RIGHT OUTER JOIN ");
             strSql.append("M_SHIFT MSHIFT ON ");
+            
+            //結合の条件指定
             strSql.append("TSHIFT.KIBOU_SHIFT_ID = ");
             strSql.append("MSHIFT.SHIFT_ID ");
+            
+            //データの絞り込み
             strSql.append("WHERE ");
             strSql.append("SUBSTRING(YEAR_MONTH_DAY, 1, 6) = ?) TSHIFT  ON ");
             strSql.append("MSHAIN.SHAIN_ID = TSHIFT.SHAIN_ID ");
@@ -139,12 +146,12 @@ public class ShukkinKibouDao extends AbstractDao{
             strSql.append("YEAR_MONTH_DAY");
 
             PreparedStatement ps = connection.prepareStatement(strSql.toString());
-
+            
             ps.setString(1, yearMonth);
-
+            
             // ログ出力
             log.info(ps);
-
+            System.out.println(strSql);
             // SQLを実行する
             ResultSet rs = ps.executeQuery();
 
@@ -152,11 +159,11 @@ public class ShukkinKibouDao extends AbstractDao{
 
             // 取得結果セット
             while (rs.next()) {
-
+            	
                 ShukkinKibouKakuninDto dto = new ShukkinKibouKakuninDto();
                 String newShainId = rs.getString(M_shain.SHAIN_ID.getName());
                 if ("".equals(shainId)) {
-                    // 初回
+                    // 初回	
                     shainId = newShainId;
                 } else if (newShainId.equals(shainId)) {
                     // 同一社員のデータ
@@ -195,5 +202,146 @@ public class ShukkinKibouDao extends AbstractDao{
 
         return shukkinKibouKakuninDtoListList;
     }
+    
+    /**
+     * シフトテーブルに対象データが存在するか確認する
+     *
+     * @param shainId 社員ID
+     * @param yearMonthDay 対象日
+     * @return true：あり,false：なし
+     * @author Kazuya.Naraki
+     */
+    public boolean isData(String shainId, String yearMonthDay) throws SQLException {
+        try {
+            StringBuffer strSql = new StringBuffer();
+            strSql.append("SELECT ");
+            strSql.append("    * ");
+            strSql.append("FROM ");
+            strSql.append("    T_SHIFT ");
+            strSql.append("WHERE ");
+            strSql.append("    SHAIN_ID = ? AND ");
+            strSql.append("    YEAR_MONTH_DAY = ? ");
 
+
+            PreparedStatement ps = connection.prepareStatement(strSql.toString());
+
+            ps.setString(1, shainId);
+            ps.setString(2, yearMonthDay);
+
+            // ログ出力
+            log.info(ps);
+
+            // 実行
+            ResultSet rs = ps.executeQuery();
+
+            // 取得結果セット
+            if (rs.next()) {
+                return true;
+            } else {
+                return false;
+            }
+        } catch (SQLException e) {
+            // 例外発生
+            throw e;
+        }
+    }
+    
+    
+    /**
+     * シフトテーブルのデータを更新する。
+     *
+     * @param tsukibetsuShiftDto 月別シフトDto
+     * @param loguinUserDto ログインユーザDto
+     * @author Kazuya.Naraki
+     */
+    //改修中 ota_naoki
+    public void updateShiftTbl(TsukibetsuShiftDto tsukibetsuShiftDto, LoginUserDto loginUserDto) throws SQLException{
+
+        try {
+
+            StringBuffer strSql = new StringBuffer();
+            strSql.append("UPDATE ");
+            strSql.append("T_SHIFT ");
+            strSql.append("SET ");
+            strSql.append("KIBOU_SHIFT_ID = ?, ");
+            strSql.append("UPDATE_SHAIN_ID = ?, ");
+            strSql.append("UPDATE_DT = current_timestamp() ");
+            strSql.append("WHERE ");
+            strSql.append("SHAIN_ID = ? ");
+            strSql.append("AND ");
+            strSql.append("YEAR_MONTH_DAY = ? ");
+
+            PreparedStatement ps = connection.prepareStatement(strSql.toString());
+
+            ps.setString(1, tsukibetsuShiftDto.getShiftId());
+            ps.setString(2, loginUserDto.getShainId());
+            ps.setString(3, tsukibetsuShiftDto.getShainId());
+            ps.setString(4, tsukibetsuShiftDto.getYearMonthDay());
+
+            // ログ出力
+            log.info(ps);
+
+            // SQLを実行する
+            ps.executeUpdate();
+
+        } catch (SQLException e) {
+            // 例外発生
+            throw e;
+        }
+    }
+    
+    
+    /**
+     * シフトテーブルのデータを登録する。
+     *
+     * @param mshainDto 月別シフトＤｔｏ
+     * @author Kazuya.Naraki
+     */
+    public void registShiftTbl(TsukibetsuShiftDto tsukibetsuShiftDto, LoginUserDto loginUserDto) throws SQLException{
+
+        try {
+
+            StringBuffer strSql = new StringBuffer();
+            strSql.append("INSERT INTO ");
+            strSql.append("T_SHIFT ");
+            strSql.append(" ( ");
+            strSql.append("SHAIN_ID,");
+            strSql.append("YEAR_MONTH_DAY,");
+            strSql.append("KIBOU_SHIFT_ID,");
+            strSql.append("CREATE_SHAIN_ID,");
+            strSql.append("CREATE_DT,");
+            strSql.append("UPDATE_SHAIN_ID,");
+            strSql.append("UPDATE_DT");
+            strSql.append(") ");
+            strSql.append("VALUES ");
+            strSql.append(" ( ");
+            strSql.append("? ");
+            strSql.append(",? ");
+            strSql.append(",? ");
+            strSql.append(",? ");
+            strSql.append(", current_timestamp()");
+            strSql.append(",? ");
+            strSql.append(", current_timestamp()");
+            strSql.append(") ");
+
+            PreparedStatement ps = connection.prepareStatement(strSql.toString());
+
+            ps.setString(1, tsukibetsuShiftDto.getShainId());
+            System.out.println(tsukibetsuShiftDto.getShainId());
+            ps.setString(2, tsukibetsuShiftDto.getYearMonthDay());
+            ps.setString(3, tsukibetsuShiftDto.getShiftId());
+            ps.setString(4, loginUserDto.getShainId());
+            ps.setString(5, loginUserDto.getShainId());
+
+            // ログ出力
+            log.info(ps);
+
+            // SQLを実行する
+            ps.executeUpdate();
+
+        } catch (SQLException e) {
+            // 例外発生
+            throw e;
+        }
+    }
 }

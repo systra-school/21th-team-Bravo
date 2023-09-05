@@ -10,24 +10,19 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
-import java.util.LinkedHashMap;
 import java.util.List;
-import java.util.Map;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
-import constant.DbConstant.M_base_shift;
-import constant.DbConstant.M_shain;
-import constant.DbConstant.M_shift;
-import constant.DbConstant.T_Shift;
-
 import business.db.dao.AbstractDao;
 import business.dto.LoginUserDto;
-import business.dto.mth.TsukibetsuBaseShiftDto;
 import business.dto.mth.TsukibetsuShiftDto;
 import business.dto.shk.ShukkinKibouKakuninDto;
 import business.logic.utils.CommonUtils;
+import constant.DbConstant.M_shain;
+import constant.DbConstant.M_shift;
+import constant.DbConstant.T_Shift;
 
 /**
  * 説明：月別シフトのDao
@@ -59,7 +54,7 @@ public class TsukibetsuShiftDao extends AbstractDao{
             strSql.append("    MSHAIN.SHAIN_ID, ");
             strSql.append("    MSHAIN.SHAIN_NAME, ");
             strSql.append("    TSHIFT.YEAR_MONTH_DAY, ");
-
+            
             if (shiftFlg) {
                 strSql.append("    TSHIFT.SHIFT_ID AS SHIFT_ID, ");
             } else {

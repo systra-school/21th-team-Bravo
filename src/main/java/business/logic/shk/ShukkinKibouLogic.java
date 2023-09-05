@@ -6,10 +6,13 @@
  */
 package business.logic.shk;
 
+import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.List;
 
 import business.db.dao.shk.ShukkinKibouDao;
+import business.dto.LoginUserDto;
+import business.dto.mth.TsukibetsuShiftDto;
 import business.dto.shk.ShukkinKibouKakuninDto;
 
 /**
@@ -36,5 +39,64 @@ public class ShukkinKibouLogic {
         List<List<ShukkinKibouKakuninDto>> kakuninDtoListList = dao.getShiftTblListList(yearMonth);
 
         return kakuninDtoListList;
+    }
+    
+    /**
+     * シフトテーブルのデータを登録・更新する。
+     * @param tsukibetsuShiftDtoListList 月別シフト一覧
+     * @return 基本シフトマップ
+     * @author naraki
+     * @throws SQLException
+     */
+    //TsukibetsuShiftLogic.java のパクリ。要改修
+    public void registShukkinKibou(List<List<TsukibetsuShiftDto>> tsukibetsuShiftDtoList, LoginUserDto loginUserDto) throws SQLException {
+
+        // Dao
+        ShukkinKibouDao dao = new ShukkinKibouDao();
+        // コネクション
+        Connection connection = dao.getConnection();
+
+        // トランザクション処理
+        connection.setAutoCommit(false);
+
+		try {
+			for(List<TsukibetsuShiftDto> temp : tsukibetsuShiftDtoList) {
+				
+				for (TsukibetsuShiftDto tsukibetsuShiftDto : temp) {
+					// 日数分ループ
+					
+					// 社員ID
+					String shainId = tsukibetsuShiftDto.getShainId();
+					// 対象年月
+					String yearMonthDay = tsukibetsuShiftDto.getYearMonthDay();
+					
+					// レコードの存在を確認する
+					boolean isData = dao.isData(shainId, yearMonthDay);
+					
+					if (isData) {
+						// 更新
+						dao.updateShiftTbl(tsukibetsuShiftDto, loginUserDto);
+					} else {
+						// 登録
+						dao.registShiftTbl(tsukibetsuShiftDto, loginUserDto);
+					}
+					
+				}
+			}
+		
+		} catch (SQLException e) {
+            // ロールバック処理
+            connection.rollback();
+            // 切断
+            connection.close();
+
+            throw e;
+        }
+
+        // コミット
+        connection.commit();
+        // 切断
+        connection.close();
+
     }
 }
