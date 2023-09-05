@@ -109,7 +109,7 @@
                     </table>
                   </td>
                   <td>
-                    <div style="overflow-x: auto;overflow-y: hidden; width:1160px;height: 100%; text-align:center;">
+                    <div style="overflow-x: auto;overflow-y: visible; width:1160px;height: 100%; text-align:center;">
                       <table border="1" cellpadding="0" cellspacing="0">
                         <tr class="tblHeader">
                           <td width="40px" align="center" valign="middle">
@@ -217,11 +217,12 @@
                         <tr class="tblHeader">
                           <logic:iterate id="dateBeanList" name="shukkinKibouKakuninForm" property="dateBeanList">
                           <bean:define id="youbiEnum" name="dateBeanList" property="youbiEnum"/>
+                          <bean:define id="shukujitsuFlg" name="dateBeanList" property="shukujitsuFlg"/>
                               <%
-                              if (DayOfWeek.SATURDAY.equals(youbiEnum)) {
-                                  color = "fontBlue";
-                              } else if (DayOfWeek.SUNDAY.equals(youbiEnum)) {
+                              if (DayOfWeek.SUNDAY.equals(youbiEnum) || (boolean)shukujitsuFlg) {
                                   color = "fontRed";
+                              } else if (DayOfWeek.SATURDAY.equals(youbiEnum)) {
+                                  color = "fontBlue";
                               } else {
                                   color = "fontBlack";
                               }
