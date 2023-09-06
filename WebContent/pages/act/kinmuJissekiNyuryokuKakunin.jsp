@@ -202,19 +202,20 @@
                 </td>
               </tr>
             <logic:iterate id="kinmuJissekiNyuryokuKakuninList" name="kinmuJissekiNyuryokuKakuninForm" property="kinmuJissekiNyuryokuKakuninList" indexId="idx">
+            	<tr class="tblBody" >
                   <div>
-                  <tr class="tblBody" >
                   <html:hidden name="kinmuJissekiNyuryokuKakuninList" property="shainId" />
                   <td width="80px" align="center">
                     <bean:write name="kinmuJissekiNyuryokuKakuninList" property="kadouDayDisp" /><br>
                   </td>
                   <bean:define id="youbi" name="kinmuJissekiNyuryokuKakuninList" property="youbi"/>
+                  <bean:define id="shukujitsuFlg" name="kinmuJissekiNyuryokuKakuninList" property="shukujitsuFlg"/>
 
                   <%
-                  if (DayOfWeek.SATURDAY.getRyaku().equals(youbi)) {
-                      color = "fontBlue";
-                  } else if (DayOfWeek.SUNDAY.getRyaku().equals(youbi)) {
+                  if (DayOfWeek.SUNDAY.getRyaku().equals(youbi) || (boolean)shukujitsuFlg) {
                       color = "fontRed";
+                  } else if (DayOfWeek.SATURDAY.getRyaku().equals(youbi)) {
+                      color = "fontBlue";
                   } else {
                       color = "fontBlack";
                   }
@@ -247,7 +248,7 @@
                   <td width="220px" align="left">
                     <html:text style="text-align:left" size="40" name="kinmuJissekiNyuryokuKakuninList" property="bikou" indexed="true"></html:text><br>
                   </td>
-                </tr>
+            </tr>
             </logic:iterate>
             </div>
             </table>
