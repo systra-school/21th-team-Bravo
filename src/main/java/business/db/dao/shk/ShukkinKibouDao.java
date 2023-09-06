@@ -130,7 +130,7 @@ public class ShukkinKibouDao extends AbstractDao{
             strSql.append("MSHIFT.SYMBOL, ");
             strSql.append("YEAR_MONTH_DAY ");
             strSql.append("FROM ");
-            strSql.append("T_SHIFT TSHIFT RIGHT OUTER JOIN ");
+            strSql.append("T_SHIFT TSHIFT LEFT OUTER JOIN ");
             strSql.append("M_SHIFT MSHIFT ON ");
             
             //結合の条件指定
