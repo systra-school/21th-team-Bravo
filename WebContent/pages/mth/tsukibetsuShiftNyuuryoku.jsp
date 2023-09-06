@@ -282,417 +282,304 @@ if (listSize > intShowLength) {
                             </td>
                         </logic:iterate>
                       </tr>
+                      
+                      <style>
+						  /* CSS スタイルを適用するためのセレクタを指定 */
+						  td select option[value="maru"],
+						  td select option[value="sankaku"],
+						  td select option[value="shikaku"],
+						  td select option[value="hoshi"] {
+						    font-family: "MS Gothic"; /* MS Gothic フォントを指定 */
+						  }
+						</style>
+                      
                       <logic:iterate offset="offset" length="<%=showLength %>" id="tsukibetsuShiftNyuuryokuBeanList" name="tsukibetsuShiftNyuuryokuForm" property="tsukibetsuShiftNyuuryokuBeanList">
-                        <html:hidden name="tsukibetsuShiftNyuuryokuBeanList" property="registFlg" value="true" indexed="true"/>
-                        <tr height="<%=heightSize %>px">
+						  <html:hidden name="tsukibetsuShiftNyuuryokuBeanList" property="registFlg" value="true" indexed="true"/>
+						  <tr height="<%=heightSize %>px">
+						    <td width="40px" align="center" valign="middle">
+						      <html:select property="shiftId01" name="tsukibetsuShiftNyuuryokuBeanList" indexed="true" style="font-family: 'MS ゴシック', sans-serif;">
+						        <html:optionsCollection name="tsukibetsuShiftNyuuryokuForm"
+						          property="shiftCmbMap"
+						          value="key"
+						          label="value"/>
+						        
+						      </html:select>
+						    </td>
                           <td width="40px" align="center" valign="middle">
-                            <html:select property="shiftId01" name="tsukibetsuShiftNyuuryokuBeanList" indexed="true">
-                            <html:optionsCollection name="tsukibetsuShiftNyuuryokuForm"
-                                                    property="shiftCmbMap"
-                                                    value="key"
-                                                    label="value"/>
-                                                    <!-- html:optionタグを追加して、ドロップダウンリストの選択肢を追加 -->
-                                                    <html:option value="maru">し</html:option>
-                                                    <html:option value="sankaku">の</html:option>
-                                                    <html:option value="shikaku">ざ</html:option>
-                                                    <html:option value="hoshi">き</html:option>
-                            </html:select>
-                          </td>
-                          <td width="40px" align="center" valign="middle">
-                            <html:select property="shiftId02" name="tsukibetsuShiftNyuuryokuBeanList" indexed="true">
-                            <html:optionsCollection name="tsukibetsuShiftNyuuryokuForm"
-                                                    property="shiftCmbMap"
-                                                    value="key"
-                                                    label="value"/>
-                                                    
-                                                    <html:option value="maru">し</html:option>
-                                                    <html:option value="sankaku">の</html:option>
-                                                    <html:option value="shikaku">ざ</html:option>
-                                                    <html:option value="hoshi">き</html:option>
-                            </html:select>
-                          </td>
-                          <td width="40px" align="center" valign="middle">
-                            <html:select property="shiftId03" name="tsukibetsuShiftNyuuryokuBeanList" indexed="true">
+                            <html:select property="shiftId02" name="tsukibetsuShiftNyuuryokuBeanList" indexed="true" style="font-family: 'MS ゴシック', sans-serif;">
                             <html:optionsCollection name="tsukibetsuShiftNyuuryokuForm"
                                                     property="shiftCmbMap"
                                                     value="key"
                                                     label="value"/>
                                                     
-                                                    <html:option value="maru">し</html:option>
-                                                    <html:option value="sankaku">の</html:option>
-                                                    <html:option value="shikaku">ざ</html:option>
-                                                    <html:option value="hoshi">き</html:option>
                             </html:select>
                           </td>
                           <td width="40px" align="center" valign="middle">
-                            <html:select property="shiftId04" name="tsukibetsuShiftNyuuryokuBeanList" indexed="true">
+                            <html:select property="shiftId03" name="tsukibetsuShiftNyuuryokuBeanList" indexed="true" style="font-family: 'MS ゴシック', sans-serif;">
                             <html:optionsCollection name="tsukibetsuShiftNyuuryokuForm"
                                                     property="shiftCmbMap"
                                                     value="key"
                                                     label="value"/>
                                                     
-                                                    <html:option value="maru">し</html:option>
-                                                    <html:option value="sankaku">の</html:option>
-                                                    <html:option value="shikaku">ざ</html:option>
-                                                    <html:option value="hoshi">き</html:option>
                             </html:select>
                           </td>
                           <td width="40px" align="center" valign="middle">
-                            <html:select property="shiftId05" name="tsukibetsuShiftNyuuryokuBeanList" indexed="true">
+                            <html:select property="shiftId04" name="tsukibetsuShiftNyuuryokuBeanList" indexed="true" style="font-family: 'MS ゴシック', sans-serif;">
                             <html:optionsCollection name="tsukibetsuShiftNyuuryokuForm"
                                                     property="shiftCmbMap"
                                                     value="key"
                                                     label="value"/>
                                                     
-                                                    <html:option value="maru">し</html:option>
-                                                    <html:option value="sankaku">の</html:option>
-                                                    <html:option value="shikaku">ざ</html:option>
-                                                    <html:option value="hoshi">き</html:option>
                             </html:select>
                           </td>
                           <td width="40px" align="center" valign="middle">
-                            <html:select property="shiftId06" name="tsukibetsuShiftNyuuryokuBeanList" indexed="true">
+                            <html:select property="shiftId05" name="tsukibetsuShiftNyuuryokuBeanList" indexed="true" style="font-family: 'MS ゴシック', sans-serif;">
                             <html:optionsCollection name="tsukibetsuShiftNyuuryokuForm"
                                                     property="shiftCmbMap"
                                                     value="key"
                                                     label="value"/>
                                                     
-                                                    <html:option value="maru">し</html:option>
-                                                    <html:option value="sankaku">の</html:option>
-                                                    <html:option value="shikaku">ざ</html:option>
-                                                    <html:option value="hoshi">き</html:option>
                             </html:select>
                           </td>
                           <td width="40px" align="center" valign="middle">
-                            <html:select property="shiftId07" name="tsukibetsuShiftNyuuryokuBeanList" indexed="true">
+                            <html:select property="shiftId06" name="tsukibetsuShiftNyuuryokuBeanList" indexed="true" style="font-family: 'MS ゴシック', sans-serif;">
                             <html:optionsCollection name="tsukibetsuShiftNyuuryokuForm"
                                                     property="shiftCmbMap"
                                                     value="key"
                                                     label="value"/>
                                                     
-                                                    <html:option value="maru">し</html:option>
-                                                    <html:option value="sankaku">の</html:option>
-                                                    <html:option value="shikaku">ざ</html:option>
-                                                    <html:option value="hoshi">き</html:option>
                             </html:select>
                           </td>
                           <td width="40px" align="center" valign="middle">
-                            <html:select property="shiftId08" name="tsukibetsuShiftNyuuryokuBeanList" indexed="true">
+                            <html:select property="shiftId07" name="tsukibetsuShiftNyuuryokuBeanList" indexed="true" style="font-family: 'MS ゴシック', sans-serif;">
                             <html:optionsCollection name="tsukibetsuShiftNyuuryokuForm"
                                                     property="shiftCmbMap"
                                                     value="key"
                                                     label="value"/>
                                                     
-                                                    <html:option value="maru">し</html:option>
-                                                    <html:option value="sankaku">の</html:option>
-                                                    <html:option value="shikaku">ざ</html:option>
-                                                    <html:option value="hoshi">き</html:option>
                             </html:select>
                           </td>
                           <td width="40px" align="center" valign="middle">
-                            <html:select property="shiftId09" name="tsukibetsuShiftNyuuryokuBeanList" indexed="true">
+                            <html:select property="shiftId08" name="tsukibetsuShiftNyuuryokuBeanList" indexed="true" style="font-family: 'MS ゴシック', sans-serif;">
                             <html:optionsCollection name="tsukibetsuShiftNyuuryokuForm"
                                                     property="shiftCmbMap"
                                                     value="key"
                                                     label="value"/>
                                                     
-                                                    <html:option value="maru">し</html:option>
-                                                    <html:option value="sankaku">の</html:option>
-                                                    <html:option value="shikaku">ざ</html:option>
-                                                    <html:option value="hoshi">き</html:option>
                             </html:select>
                           </td>
                           <td width="40px" align="center" valign="middle">
-                            <html:select property="shiftId10" name="tsukibetsuShiftNyuuryokuBeanList" indexed="true">
+                            <html:select property="shiftId09" name="tsukibetsuShiftNyuuryokuBeanList" indexed="true" style="font-family: 'MS ゴシック', sans-serif;">
                             <html:optionsCollection name="tsukibetsuShiftNyuuryokuForm"
                                                     property="shiftCmbMap"
                                                     value="key"
                                                     label="value"/>
                                                     
-                                                    <html:option value="maru">し</html:option>
-                                                    <html:option value="sankaku">の</html:option>
-                                                    <html:option value="shikaku">ざ</html:option>
-                                                    <html:option value="hoshi">き</html:option>
                             </html:select>
                           </td>
                           <td width="40px" align="center" valign="middle">
-                            <html:select property="shiftId11" name="tsukibetsuShiftNyuuryokuBeanList" indexed="true">
+                            <html:select property="shiftId10" name="tsukibetsuShiftNyuuryokuBeanList" indexed="true" style="font-family: 'MS ゴシック', sans-serif;">
                             <html:optionsCollection name="tsukibetsuShiftNyuuryokuForm"
                                                     property="shiftCmbMap"
                                                     value="key"
                                                     label="value"/>
                                                     
-                                                    <html:option value="maru">し</html:option>
-                                                    <html:option value="sankaku">の</html:option>
-                                                    <html:option value="shikaku">ざ</html:option>
-                                                    <html:option value="hoshi">き</html:option>
                             </html:select>
                           </td>
                           <td width="40px" align="center" valign="middle">
-                            <html:select property="shiftId12" name="tsukibetsuShiftNyuuryokuBeanList" indexed="true">
+                            <html:select property="shiftId11" name="tsukibetsuShiftNyuuryokuBeanList" indexed="true" style="font-family: 'MS ゴシック', sans-serif;">
                             <html:optionsCollection name="tsukibetsuShiftNyuuryokuForm"
                                                     property="shiftCmbMap"
                                                     value="key"
                                                     label="value"/>
                                                     
-                                                    <html:option value="maru">し</html:option>
-                                                    <html:option value="sankaku">の</html:option>
-                                                    <html:option value="shikaku">ざ</html:option>
-                                                    <html:option value="hoshi">き</html:option>
                             </html:select>
                           </td>
                           <td width="40px" align="center" valign="middle">
-                            <html:select property="shiftId13" name="tsukibetsuShiftNyuuryokuBeanList" indexed="true">
+                            <html:select property="shiftId12" name="tsukibetsuShiftNyuuryokuBeanList" indexed="true" style="font-family: 'MS ゴシック', sans-serif;">
                             <html:optionsCollection name="tsukibetsuShiftNyuuryokuForm"
                                                     property="shiftCmbMap"
                                                     value="key"
                                                     label="value"/>
                                                     
-                                                    <html:option value="maru">し</html:option>
-                                                    <html:option value="sankaku">の</html:option>
-                                                    <html:option value="shikaku">ざ</html:option>
-                                                    <html:option value="hoshi">き</html:option>
                             </html:select>
                           </td>
                           <td width="40px" align="center" valign="middle">
-                            <html:select property="shiftId14" name="tsukibetsuShiftNyuuryokuBeanList" indexed="true">
+                            <html:select property="shiftId13" name="tsukibetsuShiftNyuuryokuBeanList" indexed="true" style="font-family: 'MS ゴシック', sans-serif;">
                             <html:optionsCollection name="tsukibetsuShiftNyuuryokuForm"
                                                     property="shiftCmbMap"
                                                     value="key"
                                                     label="value"/>
                                                     
-                                                    <html:option value="maru">し</html:option>
-                                                    <html:option value="sankaku">の</html:option>
-                                                    <html:option value="shikaku">ざ</html:option>
-                                                    <html:option value="hoshi">き</html:option>
                             </html:select>
                           </td>
                           <td width="40px" align="center" valign="middle">
-                            <html:select property="shiftId15" name="tsukibetsuShiftNyuuryokuBeanList" indexed="true">
+                            <html:select property="shiftId14" name="tsukibetsuShiftNyuuryokuBeanList" indexed="true" style="font-family: 'MS ゴシック', sans-serif;">
                             <html:optionsCollection name="tsukibetsuShiftNyuuryokuForm"
                                                     property="shiftCmbMap"
                                                     value="key"
                                                     label="value"/>
                                                     
-                                                    <html:option value="maru">し</html:option>
-                                                    <html:option value="sankaku">の</html:option>
-                                                    <html:option value="shikaku">ざ</html:option>
-                                                    <html:option value="hoshi">き</html:option>
                             </html:select>
                           </td>
                           <td width="40px" align="center" valign="middle">
-                            <html:select property="shiftId16" name="tsukibetsuShiftNyuuryokuBeanList" indexed="true">
+                            <html:select property="shiftId15" name="tsukibetsuShiftNyuuryokuBeanList" indexed="true" style="font-family: 'MS ゴシック', sans-serif;">
                             <html:optionsCollection name="tsukibetsuShiftNyuuryokuForm"
                                                     property="shiftCmbMap"
                                                     value="key"
                                                     label="value"/>
                                                     
-                                                    <html:option value="maru">し</html:option>
-                                                    <html:option value="sankaku">の</html:option>
-                                                    <html:option value="shikaku">ざ</html:option>
-                                                    <html:option value="hoshi">き</html:option>
                             </html:select>
                           </td>
                           <td width="40px" align="center" valign="middle">
-                            <html:select property="shiftId17" name="tsukibetsuShiftNyuuryokuBeanList" indexed="true">
+                            <html:select property="shiftId16" name="tsukibetsuShiftNyuuryokuBeanList" indexed="true" style="font-family: 'MS ゴシック', sans-serif;">
                             <html:optionsCollection name="tsukibetsuShiftNyuuryokuForm"
                                                     property="shiftCmbMap"
                                                     value="key"
                                                     label="value"/>
                                                     
-                                                    <html:option value="maru">し</html:option>
-                                                    <html:option value="sankaku">の</html:option>
-                                                    <html:option value="shikaku">ざ</html:option>
-                                                    <html:option value="hoshi">き</html:option>
                             </html:select>
                           </td>
                           <td width="40px" align="center" valign="middle">
-                            <html:select property="shiftId18" name="tsukibetsuShiftNyuuryokuBeanList" indexed="true">
+                            <html:select property="shiftId17" name="tsukibetsuShiftNyuuryokuBeanList" indexed="true" style="font-family: 'MS ゴシック', sans-serif;">
                             <html:optionsCollection name="tsukibetsuShiftNyuuryokuForm"
                                                     property="shiftCmbMap"
                                                     value="key"
                                                     label="value"/>
                                                     
-                                                    <html:option value="maru">し</html:option>
-                                                    <html:option value="sankaku">の</html:option>
-                                                    <html:option value="shikaku">ざ</html:option>
-                                                    <html:option value="hoshi">き</html:option>
                             </html:select>
                           </td>
                           <td width="40px" align="center" valign="middle">
-                            <html:select property="shiftId19" name="tsukibetsuShiftNyuuryokuBeanList" indexed="true">
+                            <html:select property="shiftId18" name="tsukibetsuShiftNyuuryokuBeanList" indexed="true" style="font-family: 'MS ゴシック', sans-serif;">
                             <html:optionsCollection name="tsukibetsuShiftNyuuryokuForm"
                                                     property="shiftCmbMap"
                                                     value="key"
                                                     label="value"/>
                                                     
-                                                    <html:option value="maru">し</html:option>
-                                                    <html:option value="sankaku">の</html:option>
-                                                    <html:option value="shikaku">ざ</html:option>
-                                                    <html:option value="hoshi">き</html:option>
                             </html:select>
                           </td>
                           <td width="40px" align="center" valign="middle">
-                            <html:select property="shiftId20" name="tsukibetsuShiftNyuuryokuBeanList" indexed="true">
+                            <html:select property="shiftId19" name="tsukibetsuShiftNyuuryokuBeanList" indexed="true" style="font-family: 'MS ゴシック', sans-serif;">
                             <html:optionsCollection name="tsukibetsuShiftNyuuryokuForm"
                                                     property="shiftCmbMap"
                                                     value="key"
                                                     label="value"/>
                                                     
-                                                    <html:option value="maru">し</html:option>
-                                                    <html:option value="sankaku">の</html:option>
-                                                    <html:option value="shikaku">ざ</html:option>
-                                                    <html:option value="hoshi">き</html:option>
                             </html:select>
                           </td>
                           <td width="40px" align="center" valign="middle">
-                            <html:select property="shiftId21" name="tsukibetsuShiftNyuuryokuBeanList" indexed="true">
+                            <html:select property="shiftId20" name="tsukibetsuShiftNyuuryokuBeanList" indexed="true" style="font-family: 'MS ゴシック', sans-serif;">
                             <html:optionsCollection name="tsukibetsuShiftNyuuryokuForm"
                                                     property="shiftCmbMap"
                                                     value="key"
                                                     label="value"/>
                                                     
-                                                    <html:option value="maru">し</html:option>
-                                                    <html:option value="sankaku">の</html:option>
-                                                    <html:option value="shikaku">ざ</html:option>
-                                                    <html:option value="hoshi">き</html:option>
                             </html:select>
                           </td>
                           <td width="40px" align="center" valign="middle">
-                            <html:select property="shiftId22" name="tsukibetsuShiftNyuuryokuBeanList" indexed="true">
+                            <html:select property="shiftId21" name="tsukibetsuShiftNyuuryokuBeanList" indexed="true" style="font-family: 'MS ゴシック', sans-serif;">
                             <html:optionsCollection name="tsukibetsuShiftNyuuryokuForm"
                                                     property="shiftCmbMap"
                                                     value="key"
                                                     label="value"/>
                                                     
-                                                    <html:option value="maru">し</html:option>
-                                                    <html:option value="sankaku">の</html:option>
-                                                    <html:option value="shikaku">ざ</html:option>
-                                                    <html:option value="hoshi">き</html:option>
                             </html:select>
                           </td>
                           <td width="40px" align="center" valign="middle">
-                            <html:select property="shiftId23" name="tsukibetsuShiftNyuuryokuBeanList" indexed="true">
+                            <html:select property="shiftId22" name="tsukibetsuShiftNyuuryokuBeanList" indexed="true" style="font-family: 'MS ゴシック', sans-serif;">
                             <html:optionsCollection name="tsukibetsuShiftNyuuryokuForm"
                                                     property="shiftCmbMap"
                                                     value="key"
                                                     label="value"/>
                                                     
-                                                    <html:option value="maru">し</html:option>
-                                                    <html:option value="sankaku">の</html:option>
-                                                    <html:option value="shikaku">ざ</html:option>
-                                                    <html:option value="hoshi">き</html:option>
                             </html:select>
                           </td>
                           <td width="40px" align="center" valign="middle">
-                            <html:select property="shiftId24" name="tsukibetsuShiftNyuuryokuBeanList" indexed="true">
+                            <html:select property="shiftId23" name="tsukibetsuShiftNyuuryokuBeanList" indexed="true" style="font-family: 'MS ゴシック', sans-serif;">
                             <html:optionsCollection name="tsukibetsuShiftNyuuryokuForm"
                                                     property="shiftCmbMap"
                                                     value="key"
                                                     label="value"/>
                                                     
-                                                    <html:option value="maru">し</html:option>
-                                                    <html:option value="sankaku">の</html:option>
-                                                    <html:option value="shikaku">ざ</html:option>
-                                                    <html:option value="hoshi">き</html:option>
                             </html:select>
                           </td>
                           <td width="40px" align="center" valign="middle">
-                            <html:select property="shiftId25" name="tsukibetsuShiftNyuuryokuBeanList" indexed="true">
+                            <html:select property="shiftId24" name="tsukibetsuShiftNyuuryokuBeanList" indexed="true" style="font-family: 'MS ゴシック', sans-serif;">
                             <html:optionsCollection name="tsukibetsuShiftNyuuryokuForm"
                                                     property="shiftCmbMap"
                                                     value="key"
                                                     label="value"/>
                                                     
-                                                    <html:option value="maru">し</html:option>
-                                                    <html:option value="sankaku">の</html:option>
-                                                    <html:option value="shikaku">ざ</html:option>
-                                                    <html:option value="hoshi">き</html:option>
                             </html:select>
                           </td>
                           <td width="40px" align="center" valign="middle">
-                            <html:select property="shiftId26" name="tsukibetsuShiftNyuuryokuBeanList" indexed="true">
+                            <html:select property="shiftId25" name="tsukibetsuShiftNyuuryokuBeanList" indexed="true" style="font-family: 'MS ゴシック', sans-serif;">
                             <html:optionsCollection name="tsukibetsuShiftNyuuryokuForm"
                                                     property="shiftCmbMap"
                                                     value="key"
                                                     label="value"/>
                                                     
-                                                    <html:option value="maru">し</html:option>
-                                                    <html:option value="sankaku">の</html:option>
-                                                    <html:option value="shikaku">ざ</html:option>
-                                                    <html:option value="hoshi">き</html:option>
                             </html:select>
                           </td>
                           <td width="40px" align="center" valign="middle">
-                            <html:select property="shiftId27" name="tsukibetsuShiftNyuuryokuBeanList" indexed="true">
+                            <html:select property="shiftId26" name="tsukibetsuShiftNyuuryokuBeanList" indexed="true" style="font-family: 'MS ゴシック', sans-serif;">
                             <html:optionsCollection name="tsukibetsuShiftNyuuryokuForm"
                                                     property="shiftCmbMap"
                                                     value="key"
                                                     label="value"/>
                                                     
-                                                    <html:option value="maru">し</html:option>
-                                                    <html:option value="sankaku">の</html:option>
-                                                    <html:option value="shikaku">ざ</html:option>
-                                                    <html:option value="hoshi">き</html:option>
+                            </html:select>
+                          </td>
+                          <td width="40px" align="center" valign="middle">
+                            <html:select property="shiftId27" name="tsukibetsuShiftNyuuryokuBeanList" indexed="true" style="font-family: 'MS ゴシック', sans-serif;">
+                            <html:optionsCollection name="tsukibetsuShiftNyuuryokuForm"
+                                                    property="shiftCmbMap"
+                                                    value="key"
+                                                    label="value"/>
+                                                    
                             </html:select>
                           </td>
                           <% if (dateBeanListSize >= 28) { %>
                           <td width="40px" align="center" valign="middle">
-                            <html:select property="shiftId28" name="tsukibetsuShiftNyuuryokuBeanList" indexed="true">
+                            <html:select property="shiftId28" name="tsukibetsuShiftNyuuryokuBeanList" indexed="true" style="font-family: 'MS ゴシック', sans-serif;">
                             <html:optionsCollection name="tsukibetsuShiftNyuuryokuForm"
                                                     property="shiftCmbMap"
                                                     value="key"
                                                     label="value"/>
                                                     
-                                                    <html:option value="maru">し</html:option>
-                                                    <html:option value="sankaku">の</html:option>
-                                                    <html:option value="shikaku">ざ</html:option>
-                                                    <html:option value="hoshi">き</html:option>
                             </html:select>
                           </td>
                           <% } %>
                           <% if (dateBeanListSize >= 29) { %>
                           <td width="40px" align="center" valign="middle">
-                            <html:select property="shiftId29" name="tsukibetsuShiftNyuuryokuBeanList" indexed="true">
+                            <html:select property="shiftId29" name="tsukibetsuShiftNyuuryokuBeanList" indexed="true" style="font-family: 'MS ゴシック', sans-serif;">
                             <html:optionsCollection name="tsukibetsuShiftNyuuryokuForm"
                                                     property="shiftCmbMap"
                                                     value="key"
                                                     label="value"/>
                                                     
-                                                    <html:option value="maru">し</html:option>
-                                                    <html:option value="sankaku">の</html:option>
-                                                    <html:option value="shikaku">ざ</html:option>
-                                                    <html:option value="hoshi">き</html:option>
                             </html:select>
                           </td>
                           <% } %>
                           <% if (dateBeanListSize >= 30) { %>
                           <td width="40px" align="center" valign="middle">
-                            <html:select property="shiftId30" name="tsukibetsuShiftNyuuryokuBeanList" indexed="true">
+                            <html:select property="shiftId30" name="tsukibetsuShiftNyuuryokuBeanList" indexed="true" style="font-family: 'MS ゴシック', sans-serif;">
                             <html:optionsCollection name="tsukibetsuShiftNyuuryokuForm"
                                                     property="shiftCmbMap"
                                                     value="key"
                                                     label="value"/>
                                                     
-                                                    <html:option value="maru">し</html:option>
-                                                    <html:option value="sankaku">の</html:option>
-                                                    <html:option value="shikaku">ざ</html:option>
-                                                    <html:option value="hoshi">き</html:option>
                             </html:select>
                           </td>
                           <% } %>
                           <% if (dateBeanListSize >= 31) { %>
                           <td width="40px" align="center" valign="middle">
-                            <html:select property="shiftId31" name="tsukibetsuShiftNyuuryokuBeanList" indexed="true">
+                            <html:select property="shiftId31" name="tsukibetsuShiftNyuuryokuBeanList" indexed="true" style="font-family: 'MS ゴシック', sans-serif;">
                             <html:optionsCollection name="tsukibetsuShiftNyuuryokuForm"
                                                     property="shiftCmbMap"
                                                     value="key"
                                                     label="value"/>
                                                     
-                                                    <html:option value="maru">し</html:option>
-                                                    <html:option value="sankaku">の</html:option>
-                                                    <html:option value="shikaku">ざ</html:option>
-                                                    <html:option value="hoshi">き</html:option>
                             </html:select>
                           </td>
                           <% } %>

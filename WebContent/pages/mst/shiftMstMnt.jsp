@@ -200,7 +200,7 @@
                     <html:hidden property="shiftId" name="shiftMstMntBeanList" indexed="true"/>
                   </td>
                   <td width="70px"  align="center">
-                    <html:text property="symbol" name="shiftMstMntBeanList"  size="2" maxlength="2" indexed="true"/>
+                    <html:text property="symbol" name="shiftMstMntBeanList"  size="2" maxlength="2" indexed="true" style="font-family: 'MS ƒSƒVƒbƒN', sans-serif;"/>
                   </td>
                   <td width="230px"  align="center">
                     <table width="100%" >
