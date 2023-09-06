@@ -10,6 +10,8 @@ public final class LoginForm extends ValidatorForm {
 	String shainId;
 	// パスワード
 	String password;
+	//警告ポップ 真偽
+	boolean flg = false;
 
 	/**
 	 * @return shainId
@@ -35,6 +37,15 @@ public final class LoginForm extends ValidatorForm {
 	public void setPassword(String password) {
 		this.password = password;
 	}
+	
+	public boolean isFlg() {
+		return flg;
+	}
+	public void setFlg(boolean flg) {
+		this.flg = flg;
+	}
+	
+	
 
 
 }

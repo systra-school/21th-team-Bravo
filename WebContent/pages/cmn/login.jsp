@@ -10,8 +10,24 @@
 	<html:javascript formName="loginForm" />
 	<title>ログイン画面</title>
 	<link href="/kikin_test/pages/css/common.css" rel="stylesheet" type="text/css" />
+	<script type="text/javascript" src="/kikin_test/pages/js/message.js"></script>
+	<script type="text/javascript">
+		/*
+		追記：ota_naoki
+		パスワード/社員IDが違う場合のポップを追加
+		*/
+		function disp(){
+			var flgValue = <%= request.getAttribute("flag") %>;
+			if(flgValue){
+				var msg = getMessageCodeOnly('E-MSG-000002');
+				window.alert(msg);
+			}
+		}
+		window.onload = disp;
+	</script>
 </head>
 <body>
+
         <div id="wrapper">
         <div id="header">
             <table>
