@@ -58,12 +58,16 @@
                 password.style.backgroundColor = 'red';
             }
             // 社員名カナ
-            if (!checkHankakuKana(shainNameKanaVar)) {
-                // エラー有り
-                var strArr = ['社員名カナ'];
-                errorMsg += getMessage('E-MSG-000003', strArr);
-                shainNameKana.style.backgroundColor = 'red';
-            }
+            for (var character of shainNameKanaVar) {
+            	if (!checkHankakuKana(character)) {
+                    // エラー有り
+                    var strArr = ['社員名カナ'];
+                    errorMsg += getMessage('E-MSG-000003', strArr);
+                    shainNameKana.style.backgroundColor = 'red';
+                    break;
+                }
+			}
+            
 
             if (errorMsg) {
                 alert(errorMsg);
