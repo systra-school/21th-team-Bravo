@@ -54,6 +54,8 @@
     <style type="text/css">
  body {
 	margin: 0;
+	background-color: #66CCFF;
+	
 }
 .main-table {
 	font-size: 14px;
