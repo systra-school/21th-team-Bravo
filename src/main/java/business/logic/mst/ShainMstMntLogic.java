@@ -6,15 +6,16 @@
  */
 package business.logic.mst;
 
-import static constant.DbConstant.M_shain;
 import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.List;
+
 import business.db.dao.mst.ShainMstMntDao;
 import business.dto.LoginUserDto;
 import business.dto.mst.ShainMstMntDto;
 import business.logic.utils.CheckUtils;
 import business.logic.utils.CommonUtils;
+import constant.DbConstant.M_shain;
 
 /**
  * 説明：社員マスタメンテナンス処理のロジック
@@ -48,7 +49,12 @@ public class ShainMstMntLogic {
 
                 if (deleteFlg) {
                     // 削除
-                    shainMstMntDao.deleteShainMst(shainMstMntDto.getShainId());
+                	//追加：ota_naoki
+                	//該当社員IDのm_shift / t_shift を削除
+                    shainMstMntDao.deleteMstShain(shainMstMntDto.getShainId());
+                    shainMstMntDao.deleteMstShift(shainMstMntDto.getShainId());
+                    shainMstMntDao.deleteTsukibetuSgift(shainMstMntDto.getShainId());
+                    
                 } else {
                     // 更新
                     shainMstMntDao.updateShainMst(shainMstMntDto, loginUserDto);

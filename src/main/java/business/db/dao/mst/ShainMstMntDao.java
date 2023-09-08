@@ -195,6 +195,8 @@ public class ShainMstMntDao extends AbstractDao {
         }
     }
 
+    
+    
     /**
      * 社員マスタのデータを削除する。
      *
@@ -202,7 +204,7 @@ public class ShainMstMntDao extends AbstractDao {
      * @return なし
      * @author Kazuya.Naraki
      */
-    public void deleteShainMst(String shainId) throws SQLException{
+    public void deleteMstShain(String shainId) throws SQLException{
 
         try {
 
@@ -227,7 +229,75 @@ public class ShainMstMntDao extends AbstractDao {
             throw e;
         }
     }
+    
+    /**
+     * 削除予定の社員マスタのデータに関連するt_shiftデータを削除する。
+     *
+     * @param shainId 社員ＩＤ
+     * @return なし
+     * @author ota_naoki
+     */
+    
+    public void deleteMstShift(String shainId) throws SQLException{
 
+        try {
+
+            StringBuffer strSql = new StringBuffer();
+            strSql.append("DELETE FROM ");
+            strSql.append("T_SHIFT ");
+            strSql.append("WHERE ");
+            strSql.append("SHAIN_ID = ? ");
+
+            PreparedStatement ps = connection.prepareStatement(strSql.toString());
+
+            ps.setString(1, shainId);
+
+            // ログ出力
+            log.info(ps);
+
+            // SQLを実行する
+            ps.executeUpdate();
+
+        } catch (SQLException e) {
+            // 例外発生
+            throw e;
+        }
+    }
+
+    /**
+     * 削除予定の社員マスタのデータに関連するm_base_shiftデータを削除する。
+     *
+     * @param shainId 社員ＩＤ
+     * @return なし
+     * @author ota_naoki
+     */
+    
+    public void deleteTsukibetuSgift(String shainId) throws SQLException{
+
+        try {
+
+            StringBuffer strSql = new StringBuffer();
+            strSql.append("DELETE FROM ");
+            strSql.append("M_BASE_SHIFT ");
+            strSql.append("WHERE ");
+            strSql.append("SHAIN_ID = ? ");
+
+            PreparedStatement ps = connection.prepareStatement(strSql.toString());
+
+            ps.setString(1, shainId);
+
+            // ログ出力
+            log.info(ps);
+
+            // SQLを実行する
+            ps.executeUpdate();
+
+        } catch (SQLException e) {
+            // 例外発生
+            throw e;
+        }
+    }
+    
     /**
      * 社員マスタのデータを登録する。
      *
