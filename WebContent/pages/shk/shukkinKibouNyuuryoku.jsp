@@ -191,7 +191,7 @@ if (dateBeanListSize == 31) {
 								<html:select
 									property="shiftId01"
 									name="tsukibetsuShiftNyuuryokuBeanList"
-									indexed="true">
+									indexed="true" style="font-family: 'MS ゴシック', sans-serif;">
 									<html:optionsCollection
 										name="tsukibetsuShiftNyuuryokuForm"
 										property="shiftCmbMap"
@@ -203,7 +203,7 @@ if (dateBeanListSize == 31) {
 								<html:select
 									property="shiftId02"
 									name="tsukibetsuShiftNyuuryokuBeanList"
-									indexed="true">
+									indexed="true" style="font-family: 'MS ゴシック', sans-serif;">
 									<html:optionsCollection
 										name="tsukibetsuShiftNyuuryokuForm"
 										property="shiftCmbMap"
@@ -215,7 +215,7 @@ if (dateBeanListSize == 31) {
 								<html:select
 									property="shiftId03"
 									name="tsukibetsuShiftNyuuryokuBeanList"
-									indexed="true">
+									indexed="true" style="font-family: 'MS ゴシック', sans-serif;">
 									<html:optionsCollection
 										name="tsukibetsuShiftNyuuryokuForm"
 										property="shiftCmbMap"
@@ -227,7 +227,7 @@ if (dateBeanListSize == 31) {
 								<html:select
 									property="shiftId04"
 									name="tsukibetsuShiftNyuuryokuBeanList"
-									indexed="true">
+									indexed="true" style="font-family: 'MS ゴシック', sans-serif;">
 									<html:optionsCollection
 										name="tsukibetsuShiftNyuuryokuForm"
 										property="shiftCmbMap"
@@ -239,7 +239,7 @@ if (dateBeanListSize == 31) {
 								<html:select
 									property="shiftId05"
 									name="tsukibetsuShiftNyuuryokuBeanList"
-									indexed="true">
+									indexed="true" style="font-family: 'MS ゴシック', sans-serif;">
 									<html:optionsCollection
 										name="tsukibetsuShiftNyuuryokuForm"
 										property="shiftCmbMap"
@@ -251,7 +251,7 @@ if (dateBeanListSize == 31) {
 								<html:select
 									property="shiftId06"
 									name="tsukibetsuShiftNyuuryokuBeanList"
-									indexed="true">
+									indexed="true" style="font-family: 'MS ゴシック', sans-serif;">
 									<html:optionsCollection
 										name="tsukibetsuShiftNyuuryokuForm"
 										property="shiftCmbMap"
@@ -263,7 +263,7 @@ if (dateBeanListSize == 31) {
 								<html:select
 									property="shiftId07"
 									name="tsukibetsuShiftNyuuryokuBeanList"
-									indexed="true">
+									indexed="true" style="font-family: 'MS ゴシック', sans-serif;">
 									<html:optionsCollection
 										name="tsukibetsuShiftNyuuryokuForm"
 										property="shiftCmbMap"
@@ -275,7 +275,7 @@ if (dateBeanListSize == 31) {
 								<html:select
 									property="shiftId08"
 									name="tsukibetsuShiftNyuuryokuBeanList"
-									indexed="true">
+									indexed="true" style="font-family: 'MS ゴシック', sans-serif;">
 									<html:optionsCollection
 										name="tsukibetsuShiftNyuuryokuForm"
 										property="shiftCmbMap"
@@ -287,7 +287,7 @@ if (dateBeanListSize == 31) {
 								<html:select
 									property="shiftId09"
 									name="tsukibetsuShiftNyuuryokuBeanList"
-									indexed="true">
+									indexed="true" style="font-family: 'MS ゴシック', sans-serif;">
 									<html:optionsCollection
 										name="tsukibetsuShiftNyuuryokuForm"
 										property="shiftCmbMap"
@@ -299,7 +299,7 @@ if (dateBeanListSize == 31) {
 								<html:select
 									property="shiftId10"
 									name="tsukibetsuShiftNyuuryokuBeanList"
-									indexed="true">
+									indexed="true" style="font-family: 'MS ゴシック', sans-serif;">
 									<html:optionsCollection
 										name="tsukibetsuShiftNyuuryokuForm"
 										property="shiftCmbMap"
@@ -311,7 +311,7 @@ if (dateBeanListSize == 31) {
 								<html:select
 									property="shiftId11"
 									name="tsukibetsuShiftNyuuryokuBeanList"
-									indexed="true">
+									indexed="true" style="font-family: 'MS ゴシック', sans-serif;">
 									<html:optionsCollection
 										name="tsukibetsuShiftNyuuryokuForm"
 										property="shiftCmbMap"
@@ -323,7 +323,7 @@ if (dateBeanListSize == 31) {
 								<html:select
 									property="shiftId12"
 									name="tsukibetsuShiftNyuuryokuBeanList"
-									indexed="true">
+									indexed="true" style="font-family: 'MS ゴシック', sans-serif;">
 									<html:optionsCollection
 										name="tsukibetsuShiftNyuuryokuForm"
 										property="shiftCmbMap"
@@ -335,7 +335,7 @@ if (dateBeanListSize == 31) {
 								<html:select
 									property="shiftId13"
 									name="tsukibetsuShiftNyuuryokuBeanList"
-									indexed="true">
+									indexed="true" style="font-family: 'MS ゴシック', sans-serif;">
 									<html:optionsCollection
 										name="tsukibetsuShiftNyuuryokuForm"
 										property="shiftCmbMap"
@@ -347,7 +347,7 @@ if (dateBeanListSize == 31) {
 								<html:select
 									property="shiftId14"
 									name="tsukibetsuShiftNyuuryokuBeanList"
-									indexed="true">
+									indexed="true" style="font-family: 'MS ゴシック', sans-serif;">
 									<html:optionsCollection
 										name="tsukibetsuShiftNyuuryokuForm"
 										property="shiftCmbMap"
@@ -359,7 +359,7 @@ if (dateBeanListSize == 31) {
 								<html:select
 									property="shiftId15" 
 									name="tsukibetsuShiftNyuuryokuBeanList"
-									indexed="true">
+									indexed="true" style="font-family: 'MS ゴシック', sans-serif;">
 									<html:optionsCollection 
 										name="tsukibetsuShiftNyuuryokuForm"
 										property="shiftCmbMap" 
@@ -371,7 +371,7 @@ if (dateBeanListSize == 31) {
 								<html:select
 									property="shiftId16"
 									name="tsukibetsuShiftNyuuryokuBeanList"
-									indexed="true">
+									indexed="true" style="font-family: 'MS ゴシック', sans-serif;">
 									<html:optionsCollection
 										name="tsukibetsuShiftNyuuryokuForm"
 										property="shiftCmbMap"
@@ -383,7 +383,7 @@ if (dateBeanListSize == 31) {
 								<html:select
 									property="shiftId17"
 									name="tsukibetsuShiftNyuuryokuBeanList"
-									indexed="true">
+									indexed="true" style="font-family: 'MS ゴシック', sans-serif;">
 									<html:optionsCollection
 										name="tsukibetsuShiftNyuuryokuForm"
 										property="shiftCmbMap"
@@ -395,7 +395,7 @@ if (dateBeanListSize == 31) {
 								<html:select
 									property="shiftId18"
 									name="tsukibetsuShiftNyuuryokuBeanList"
-									indexed="true">
+									indexed="true" style="font-family: 'MS ゴシック', sans-serif;">
 									<html:optionsCollection
 										name="tsukibetsuShiftNyuuryokuForm"
 										property="shiftCmbMap"
@@ -407,7 +407,7 @@ if (dateBeanListSize == 31) {
 								<html:select
 									property="shiftId19"
 									name="tsukibetsuShiftNyuuryokuBeanList"
-									indexed="true">
+									indexed="true" style="font-family: 'MS ゴシック', sans-serif;">
 									<html:optionsCollection
 										name="tsukibetsuShiftNyuuryokuForm"
 										property="shiftCmbMap"
@@ -419,7 +419,7 @@ if (dateBeanListSize == 31) {
 								<html:select
 									property="shiftId20"
 									name="tsukibetsuShiftNyuuryokuBeanList"
-									indexed="true">
+									indexed="true" style="font-family: 'MS ゴシック', sans-serif;">
 									<html:optionsCollection
 										name="tsukibetsuShiftNyuuryokuForm"
 										property="shiftCmbMap"
@@ -431,7 +431,7 @@ if (dateBeanListSize == 31) {
 								<html:select
 									property="shiftId21"
 									name="tsukibetsuShiftNyuuryokuBeanList"
-									indexed="true">
+									indexed="true" style="font-family: 'MS ゴシック', sans-serif;">
 									<html:optionsCollection
 										name="tsukibetsuShiftNyuuryokuForm"
 										property="shiftCmbMap"
@@ -443,7 +443,7 @@ if (dateBeanListSize == 31) {
 								<html:select
 									property="shiftId22"
 									name="tsukibetsuShiftNyuuryokuBeanList"
-									indexed="true">
+									indexed="true" style="font-family: 'MS ゴシック', sans-serif;">
 									<html:optionsCollection
 										name="tsukibetsuShiftNyuuryokuForm"
 										property="shiftCmbMap"
@@ -455,7 +455,7 @@ if (dateBeanListSize == 31) {
 								<html:select
 									property="shiftId23"
 									name="tsukibetsuShiftNyuuryokuBeanList"
-									indexed="true">
+									indexed="true" style="font-family: 'MS ゴシック', sans-serif;">
 									<html:optionsCollection
 										name="tsukibetsuShiftNyuuryokuForm"
 										property="shiftCmbMap"
@@ -467,7 +467,7 @@ if (dateBeanListSize == 31) {
 								<html:select
 									property="shiftId24"
 									name="tsukibetsuShiftNyuuryokuBeanList"
-									indexed="true">
+									indexed="true" style="font-family: 'MS ゴシック', sans-serif;">
 									<html:optionsCollection
 										name="tsukibetsuShiftNyuuryokuForm"
 										property="shiftCmbMap"
@@ -479,7 +479,7 @@ if (dateBeanListSize == 31) {
 								<html:select
 									property="shiftId25"
 									name="tsukibetsuShiftNyuuryokuBeanList"
-									indexed="true">
+									indexed="true" style="font-family: 'MS ゴシック', sans-serif;">
 									<html:optionsCollection
 										name="tsukibetsuShiftNyuuryokuForm"
 										property="shiftCmbMap"
@@ -491,7 +491,7 @@ if (dateBeanListSize == 31) {
 								<html:select
 									property="shiftId26"
 									name="tsukibetsuShiftNyuuryokuBeanList"
-									indexed="true">
+									indexed="true" style="font-family: 'MS ゴシック', sans-serif;">
 									<html:optionsCollection
 										name="tsukibetsuShiftNyuuryokuForm"
 										property="shiftCmbMap"
@@ -503,7 +503,7 @@ if (dateBeanListSize == 31) {
 								<html:select
 									property="shiftId27"
 									name="tsukibetsuShiftNyuuryokuBeanList"
-									indexed="true">
+									indexed="true" style="font-family: 'MS ゴシック', sans-serif;">
 									<html:optionsCollection
 										name="tsukibetsuShiftNyuuryokuForm"
 										property="shiftCmbMap"
@@ -518,7 +518,7 @@ if (dateBeanListSize >= 28) {
 								<html:select
 									property="shiftId28"
 									name="tsukibetsuShiftNyuuryokuBeanList"
-									indexed="true">
+									indexed="true" style="font-family: 'MS ゴシック', sans-serif;">
 									<html:optionsCollection
 										name="tsukibetsuShiftNyuuryokuForm"
 										property="shiftCmbMap"
@@ -534,7 +534,7 @@ if (dateBeanListSize >= 29) {
 								<html:select
 									property="shiftId29"
 									name="tsukibetsuShiftNyuuryokuBeanList"
-									indexed="true">
+									indexed="true" style="font-family: 'MS ゴシック', sans-serif;">
 									<html:optionsCollection
 										name="tsukibetsuShiftNyuuryokuForm"
 										property="shiftCmbMap"
@@ -550,7 +550,7 @@ if (dateBeanListSize >= 30) {
 								<html:select
 									property="shiftId30"
 									name="tsukibetsuShiftNyuuryokuBeanList"
-									indexed="true">
+									indexed="true" style="font-family: 'MS ゴシック', sans-serif;">
 									<html:optionsCollection
 										name="tsukibetsuShiftNyuuryokuForm"
 										property="shiftCmbMap"
@@ -566,7 +566,7 @@ if (dateBeanListSize >= 31) {
 								<html:select
 									property="shiftId31"
 									name="tsukibetsuShiftNyuuryokuBeanList"
-									indexed="true">
+									indexed="true" style="font-family: 'MS ゴシック', sans-serif;">
 									<html:optionsCollection
 										name="tsukibetsuShiftNyuuryokuForm"
 										property="shiftCmbMap"
