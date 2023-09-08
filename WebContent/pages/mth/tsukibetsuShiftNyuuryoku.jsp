@@ -161,107 +161,19 @@ if (listSize > intShowLength) {
                   <div style="overflow-x: auto;overflow-y: hidden; width:985px;height: <%=heightSize * (listSize + 2) + 18 %>px; text-align:center;">
                     <table class="tblHeader" border="1" cellpadding="0" cellspacing="0">
                       <tr height="<%=heightSize %>px">
-                        <td width="40px" align="center">
-                          1
+                      <!-- 修正：ota_naoki
+                      冗長な書き方を修正
+                      1~nまで手書きだったtdタグをfor文で記述
+                       -->
+                      <%
+                      for(int i = 1; i <= dateBeanListSize; i++){
+                    	  %> 
+                    	  <td width="40px" align="center">
+								<%= i %>
                         </td>
-                        <td width="40px" align="center">
-                          2
-                        </td>
-                        <td width="40px" align="center">
-                          3
-                        </td>
-                        <td width="40px" align="center">
-                          4
-                        </td>
-                        <td width="40px" align="center">
-                          5
-                        </td>
-                        <td width="40px" align="center">
-                          6
-                        </td>
-                        <td width="40px" align="center">
-                          7
-                        </td>
-                        <td width="40px" align="center">
-                          8
-                        </td>
-                        <td width="40px" align="center">
-                          9
-                        </td>
-                        <td width="40px" align="center">
-                          10
-                        </td>
-                        <td width="40px" align="center">
-                          11
-                        </td>
-                        <td width="40px" align="center">
-                          12
-                        </td>
-                        <td width="40px" align="center">
-                          13
-                        </td>
-                        <td width="40px" align="center">
-                          14
-                        </td>
-                        <td width="40px" align="center">
-                          15
-                        </td>
-                        <td width="40px" align="center">
-                          16
-                        </td>
-                        <td width="40px" align="center">
-                          17
-                        </td>
-                        <td width="40px" align="center">
-                          18
-                        </td>
-                        <td width="40px" align="center">
-                          19
-                        </td>
-                        <td width="40px" align="center">
-                          20
-                        </td>
-                        <td width="40px" align="center">
-                          21
-                        </td>
-                        <td width="40px" align="center">
-                          22
-                        </td>
-                        <td width="40px" align="center">
-                          23
-                        </td>
-                        <td width="40px" align="center">
-                          24
-                        </td>
-                        <td width="40px" align="center">
-                          25
-                        </td>
-                        <td width="40px" align="center">
-                          26
-                        </td>
-                        <td width="40px" align="center">
-                          27
-                        </td>
-                        <% if (dateBeanListSize >= 28) { %>
-                        <td width="40px" align="center">
-                          28
-                        </td>
-                        <% } %>
-                        <% if (dateBeanListSize >= 29) { %>
-                        <td width="40px" align="center">
-                          29
-                        </td>
-                        <% } %>
-                        <% if (dateBeanListSize >= 30) { %>
-                        <td width="40px" align="center">
-                          30
-                        </td>
-                        <% } %>
-                        <% if (dateBeanListSize == 31) { %>
-                        <td width="40px" align="center">
-                          31
-                        </td>
-                        <% } %>
+                    	  <%
+                      }
+                      %>
                       </tr>
                       <tr height="<%=heightSize %>px">
                         <logic:iterate id="dateBeanList" name="tsukibetsuShiftNyuuryokuForm" property="dateBeanList">
