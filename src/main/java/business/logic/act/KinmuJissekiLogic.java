@@ -12,13 +12,12 @@ import java.text.ParseException;
 import java.util.List;
 import java.util.Map;
 
-import exception.CommonException;
-
 import business.db.dao.act.KinmuJissekiDao;
 import business.dto.LoginUserDto;
 import business.dto.act.KinmuJissekiDto;
 import business.logic.utils.CheckUtils;
 import business.logic.utils.CommonUtils;
+import exception.CommonException;
 
 /**
  * 説明：ログイン処理のロジック
@@ -211,8 +210,29 @@ public class KinmuJissekiLogic {
                 kinmuJissekiDto.setKyuujitsuTime(jitsudouTime.toString());
             } else {
                 // シフトがある場合
+            	//清田　作成
+            	long startTimeShiftLong =CommonUtils.getSecond(startTimeShift);
+            	long endTimeShiftLong = CommonUtils.getSecond(endTimeShift);
+            	long breakTimeShiftLong = CommonUtils.getSecond(breakTimeShift);
+            	long jikangaiTimeS = jitsudouTimeS - (endTimeShiftLong - startTimeShiftLong - breakTimeShiftLong);
+            			
+            	 if (jikangaiTimeS < 0) {
+                     // 休憩が多かったとき
+                     jikangaiTimeS = 0;
+                 }
+            	  long jikangaiTimeM = jikangaiTimeS / 60; // 分
+                  // 分を60で除算する → 時に変換。
+                  long jikangaiTimeH = jikangaiTimeM / 60; // 時
+                  // 分を60で除算したときの余り → 分を算出する。
+                  jikangaiTimeM = jikangaiTimeM % 60; // 余りが分になる
+                  
+                  StringBuffer jikangaiTime = new StringBuffer();
+                  jikangaiTime.append(CommonUtils.padWithZero(String.valueOf(jikangaiTimeH), 2));
+                  jikangaiTime.append(colon);
+                  jikangaiTime.append(CommonUtils.padWithZero(String.valueOf(jikangaiTimeM), 2));
 
                 // 実働時間を勤務実績Dtoの勤務実績へセット
+            	kinmuJissekiDto.setJikangaiTime(jikangaiTime.toString());
                 kinmuJissekiDto.setJitsudouTime(jitsudouTime.toString());
             }
         }
