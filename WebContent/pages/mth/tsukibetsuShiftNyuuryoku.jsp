@@ -208,8 +208,22 @@ if (listSize > intShowLength) {
                       <logic:iterate offset="offset" length="<%=showLength %>" id="tsukibetsuShiftNyuuryokuBeanList" name="tsukibetsuShiftNyuuryokuForm" property="tsukibetsuShiftNyuuryokuBeanList">
 						  <html:hidden name="tsukibetsuShiftNyuuryokuBeanList" property="registFlg" value="true" indexed="true"/>
 						  <tr height="<%=heightSize %>px">
-						    <td width="40px" align="center" valign="middle">
-						      <html:select property="shiftId01" name="tsukibetsuShiftNyuuryokuBeanList" indexed="true" style="font-family: 'MS ゴシック', sans-serif;">
+						  <!-- 修正：ota_naoki
+	                      冗長な書き方を修正
+	                      1~nまで手書きだったtdタグをfor文で記述
+	                       -->
+						  <%
+						  String baseShiftId = "shiftId";
+						  String inputShiftId = null;
+						  for(int i = 1; i <= dateBeanListSize; i++){
+							  inputShiftId = baseShiftId;
+							  if(i < 10){
+								  inputShiftId += "0";
+							  }
+							  inputShiftId += i;
+							  %>
+							  <td width="40px" align="center" valign="middle">
+						      <html:select property="<%=inputShiftId %>" name="tsukibetsuShiftNyuuryokuBeanList" indexed="true" style="font-family: 'MS ゴシック', sans-serif;">
 						        <html:optionsCollection name="tsukibetsuShiftNyuuryokuForm"
 						          property="shiftCmbMap"
 						          value="key"
@@ -217,284 +231,10 @@ if (listSize > intShowLength) {
 						        
 						      </html:select>
 						    </td>
-                          <td width="40px" align="center" valign="middle">
-                            <html:select property="shiftId02" name="tsukibetsuShiftNyuuryokuBeanList" indexed="true" style="font-family: 'MS ゴシック', sans-serif;">
-                            <html:optionsCollection name="tsukibetsuShiftNyuuryokuForm"
-                                                    property="shiftCmbMap"
-                                                    value="key"
-                                                    label="value"/>
-                                                    
-                            </html:select>
-                          </td>
-                          <td width="40px" align="center" valign="middle">
-                            <html:select property="shiftId03" name="tsukibetsuShiftNyuuryokuBeanList" indexed="true" style="font-family: 'MS ゴシック', sans-serif;">
-                            <html:optionsCollection name="tsukibetsuShiftNyuuryokuForm"
-                                                    property="shiftCmbMap"
-                                                    value="key"
-                                                    label="value"/>
-                                                    
-                            </html:select>
-                          </td>
-                          <td width="40px" align="center" valign="middle">
-                            <html:select property="shiftId04" name="tsukibetsuShiftNyuuryokuBeanList" indexed="true" style="font-family: 'MS ゴシック', sans-serif;">
-                            <html:optionsCollection name="tsukibetsuShiftNyuuryokuForm"
-                                                    property="shiftCmbMap"
-                                                    value="key"
-                                                    label="value"/>
-                                                    
-                            </html:select>
-                          </td>
-                          <td width="40px" align="center" valign="middle">
-                            <html:select property="shiftId05" name="tsukibetsuShiftNyuuryokuBeanList" indexed="true" style="font-family: 'MS ゴシック', sans-serif;">
-                            <html:optionsCollection name="tsukibetsuShiftNyuuryokuForm"
-                                                    property="shiftCmbMap"
-                                                    value="key"
-                                                    label="value"/>
-                                                    
-                            </html:select>
-                          </td>
-                          <td width="40px" align="center" valign="middle">
-                            <html:select property="shiftId06" name="tsukibetsuShiftNyuuryokuBeanList" indexed="true" style="font-family: 'MS ゴシック', sans-serif;">
-                            <html:optionsCollection name="tsukibetsuShiftNyuuryokuForm"
-                                                    property="shiftCmbMap"
-                                                    value="key"
-                                                    label="value"/>
-                                                    
-                            </html:select>
-                          </td>
-                          <td width="40px" align="center" valign="middle">
-                            <html:select property="shiftId07" name="tsukibetsuShiftNyuuryokuBeanList" indexed="true" style="font-family: 'MS ゴシック', sans-serif;">
-                            <html:optionsCollection name="tsukibetsuShiftNyuuryokuForm"
-                                                    property="shiftCmbMap"
-                                                    value="key"
-                                                    label="value"/>
-                                                    
-                            </html:select>
-                          </td>
-                          <td width="40px" align="center" valign="middle">
-                            <html:select property="shiftId08" name="tsukibetsuShiftNyuuryokuBeanList" indexed="true" style="font-family: 'MS ゴシック', sans-serif;">
-                            <html:optionsCollection name="tsukibetsuShiftNyuuryokuForm"
-                                                    property="shiftCmbMap"
-                                                    value="key"
-                                                    label="value"/>
-                                                    
-                            </html:select>
-                          </td>
-                          <td width="40px" align="center" valign="middle">
-                            <html:select property="shiftId09" name="tsukibetsuShiftNyuuryokuBeanList" indexed="true" style="font-family: 'MS ゴシック', sans-serif;">
-                            <html:optionsCollection name="tsukibetsuShiftNyuuryokuForm"
-                                                    property="shiftCmbMap"
-                                                    value="key"
-                                                    label="value"/>
-                                                    
-                            </html:select>
-                          </td>
-                          <td width="40px" align="center" valign="middle">
-                            <html:select property="shiftId10" name="tsukibetsuShiftNyuuryokuBeanList" indexed="true" style="font-family: 'MS ゴシック', sans-serif;">
-                            <html:optionsCollection name="tsukibetsuShiftNyuuryokuForm"
-                                                    property="shiftCmbMap"
-                                                    value="key"
-                                                    label="value"/>
-                                                    
-                            </html:select>
-                          </td>
-                          <td width="40px" align="center" valign="middle">
-                            <html:select property="shiftId11" name="tsukibetsuShiftNyuuryokuBeanList" indexed="true" style="font-family: 'MS ゴシック', sans-serif;">
-                            <html:optionsCollection name="tsukibetsuShiftNyuuryokuForm"
-                                                    property="shiftCmbMap"
-                                                    value="key"
-                                                    label="value"/>
-                                                    
-                            </html:select>
-                          </td>
-                          <td width="40px" align="center" valign="middle">
-                            <html:select property="shiftId12" name="tsukibetsuShiftNyuuryokuBeanList" indexed="true" style="font-family: 'MS ゴシック', sans-serif;">
-                            <html:optionsCollection name="tsukibetsuShiftNyuuryokuForm"
-                                                    property="shiftCmbMap"
-                                                    value="key"
-                                                    label="value"/>
-                                                    
-                            </html:select>
-                          </td>
-                          <td width="40px" align="center" valign="middle">
-                            <html:select property="shiftId13" name="tsukibetsuShiftNyuuryokuBeanList" indexed="true" style="font-family: 'MS ゴシック', sans-serif;">
-                            <html:optionsCollection name="tsukibetsuShiftNyuuryokuForm"
-                                                    property="shiftCmbMap"
-                                                    value="key"
-                                                    label="value"/>
-                                                    
-                            </html:select>
-                          </td>
-                          <td width="40px" align="center" valign="middle">
-                            <html:select property="shiftId14" name="tsukibetsuShiftNyuuryokuBeanList" indexed="true" style="font-family: 'MS ゴシック', sans-serif;">
-                            <html:optionsCollection name="tsukibetsuShiftNyuuryokuForm"
-                                                    property="shiftCmbMap"
-                                                    value="key"
-                                                    label="value"/>
-                                                    
-                            </html:select>
-                          </td>
-                          <td width="40px" align="center" valign="middle">
-                            <html:select property="shiftId15" name="tsukibetsuShiftNyuuryokuBeanList" indexed="true" style="font-family: 'MS ゴシック', sans-serif;">
-                            <html:optionsCollection name="tsukibetsuShiftNyuuryokuForm"
-                                                    property="shiftCmbMap"
-                                                    value="key"
-                                                    label="value"/>
-                                                    
-                            </html:select>
-                          </td>
-                          <td width="40px" align="center" valign="middle">
-                            <html:select property="shiftId16" name="tsukibetsuShiftNyuuryokuBeanList" indexed="true" style="font-family: 'MS ゴシック', sans-serif;">
-                            <html:optionsCollection name="tsukibetsuShiftNyuuryokuForm"
-                                                    property="shiftCmbMap"
-                                                    value="key"
-                                                    label="value"/>
-                                                    
-                            </html:select>
-                          </td>
-                          <td width="40px" align="center" valign="middle">
-                            <html:select property="shiftId17" name="tsukibetsuShiftNyuuryokuBeanList" indexed="true" style="font-family: 'MS ゴシック', sans-serif;">
-                            <html:optionsCollection name="tsukibetsuShiftNyuuryokuForm"
-                                                    property="shiftCmbMap"
-                                                    value="key"
-                                                    label="value"/>
-                                                    
-                            </html:select>
-                          </td>
-                          <td width="40px" align="center" valign="middle">
-                            <html:select property="shiftId18" name="tsukibetsuShiftNyuuryokuBeanList" indexed="true" style="font-family: 'MS ゴシック', sans-serif;">
-                            <html:optionsCollection name="tsukibetsuShiftNyuuryokuForm"
-                                                    property="shiftCmbMap"
-                                                    value="key"
-                                                    label="value"/>
-                                                    
-                            </html:select>
-                          </td>
-                          <td width="40px" align="center" valign="middle">
-                            <html:select property="shiftId19" name="tsukibetsuShiftNyuuryokuBeanList" indexed="true" style="font-family: 'MS ゴシック', sans-serif;">
-                            <html:optionsCollection name="tsukibetsuShiftNyuuryokuForm"
-                                                    property="shiftCmbMap"
-                                                    value="key"
-                                                    label="value"/>
-                                                    
-                            </html:select>
-                          </td>
-                          <td width="40px" align="center" valign="middle">
-                            <html:select property="shiftId20" name="tsukibetsuShiftNyuuryokuBeanList" indexed="true" style="font-family: 'MS ゴシック', sans-serif;">
-                            <html:optionsCollection name="tsukibetsuShiftNyuuryokuForm"
-                                                    property="shiftCmbMap"
-                                                    value="key"
-                                                    label="value"/>
-                                                    
-                            </html:select>
-                          </td>
-                          <td width="40px" align="center" valign="middle">
-                            <html:select property="shiftId21" name="tsukibetsuShiftNyuuryokuBeanList" indexed="true" style="font-family: 'MS ゴシック', sans-serif;">
-                            <html:optionsCollection name="tsukibetsuShiftNyuuryokuForm"
-                                                    property="shiftCmbMap"
-                                                    value="key"
-                                                    label="value"/>
-                                                    
-                            </html:select>
-                          </td>
-                          <td width="40px" align="center" valign="middle">
-                            <html:select property="shiftId22" name="tsukibetsuShiftNyuuryokuBeanList" indexed="true" style="font-family: 'MS ゴシック', sans-serif;">
-                            <html:optionsCollection name="tsukibetsuShiftNyuuryokuForm"
-                                                    property="shiftCmbMap"
-                                                    value="key"
-                                                    label="value"/>
-                                                    
-                            </html:select>
-                          </td>
-                          <td width="40px" align="center" valign="middle">
-                            <html:select property="shiftId23" name="tsukibetsuShiftNyuuryokuBeanList" indexed="true" style="font-family: 'MS ゴシック', sans-serif;">
-                            <html:optionsCollection name="tsukibetsuShiftNyuuryokuForm"
-                                                    property="shiftCmbMap"
-                                                    value="key"
-                                                    label="value"/>
-                                                    
-                            </html:select>
-                          </td>
-                          <td width="40px" align="center" valign="middle">
-                            <html:select property="shiftId24" name="tsukibetsuShiftNyuuryokuBeanList" indexed="true" style="font-family: 'MS ゴシック', sans-serif;">
-                            <html:optionsCollection name="tsukibetsuShiftNyuuryokuForm"
-                                                    property="shiftCmbMap"
-                                                    value="key"
-                                                    label="value"/>
-                                                    
-                            </html:select>
-                          </td>
-                          <td width="40px" align="center" valign="middle">
-                            <html:select property="shiftId25" name="tsukibetsuShiftNyuuryokuBeanList" indexed="true" style="font-family: 'MS ゴシック', sans-serif;">
-                            <html:optionsCollection name="tsukibetsuShiftNyuuryokuForm"
-                                                    property="shiftCmbMap"
-                                                    value="key"
-                                                    label="value"/>
-                                                    
-                            </html:select>
-                          </td>
-                          <td width="40px" align="center" valign="middle">
-                            <html:select property="shiftId26" name="tsukibetsuShiftNyuuryokuBeanList" indexed="true" style="font-family: 'MS ゴシック', sans-serif;">
-                            <html:optionsCollection name="tsukibetsuShiftNyuuryokuForm"
-                                                    property="shiftCmbMap"
-                                                    value="key"
-                                                    label="value"/>
-                                                    
-                            </html:select>
-                          </td>
-                          <td width="40px" align="center" valign="middle">
-                            <html:select property="shiftId27" name="tsukibetsuShiftNyuuryokuBeanList" indexed="true" style="font-family: 'MS ゴシック', sans-serif;">
-                            <html:optionsCollection name="tsukibetsuShiftNyuuryokuForm"
-                                                    property="shiftCmbMap"
-                                                    value="key"
-                                                    label="value"/>
-                                                    
-                            </html:select>
-                          </td>
-                          <% if (dateBeanListSize >= 28) { %>
-                          <td width="40px" align="center" valign="middle">
-                            <html:select property="shiftId28" name="tsukibetsuShiftNyuuryokuBeanList" indexed="true" style="font-family: 'MS ゴシック', sans-serif;">
-                            <html:optionsCollection name="tsukibetsuShiftNyuuryokuForm"
-                                                    property="shiftCmbMap"
-                                                    value="key"
-                                                    label="value"/>
-                                                    
-                            </html:select>
-                          </td>
-                          <% } %>
-                          <% if (dateBeanListSize >= 29) { %>
-                          <td width="40px" align="center" valign="middle">
-                            <html:select property="shiftId29" name="tsukibetsuShiftNyuuryokuBeanList" indexed="true" style="font-family: 'MS ゴシック', sans-serif;">
-                            <html:optionsCollection name="tsukibetsuShiftNyuuryokuForm"
-                                                    property="shiftCmbMap"
-                                                    value="key"
-                                                    label="value"/>
-                                                    
-                            </html:select>
-                          </td>
-                          <% } %>
-                          <% if (dateBeanListSize >= 30) { %>
-                          <td width="40px" align="center" valign="middle">
-                            <html:select property="shiftId30" name="tsukibetsuShiftNyuuryokuBeanList" indexed="true" style="font-family: 'MS ゴシック', sans-serif;">
-                            <html:optionsCollection name="tsukibetsuShiftNyuuryokuForm"
-                                                    property="shiftCmbMap"
-                                                    value="key"
-                                                    label="value"/>
-                                                    
-                            </html:select>
-                          </td>
-                          <% } %>
-                          <% if (dateBeanListSize >= 31) { %>
-                          <td width="40px" align="center" valign="middle">
-                            <html:select property="shiftId31" name="tsukibetsuShiftNyuuryokuBeanList" indexed="true" style="font-family: 'MS ゴシック', sans-serif;">
-                            <html:optionsCollection name="tsukibetsuShiftNyuuryokuForm"
-                                                    property="shiftCmbMap"
-                                                    value="key"
-                                                    label="value"/>
-                                                    
-                            </html:select>
-                          </td>
-                          <% } %>
+							  <% 
+						  }
+						  %>
+						    
                         </tr>
                       </logic:iterate>
                     </table>
