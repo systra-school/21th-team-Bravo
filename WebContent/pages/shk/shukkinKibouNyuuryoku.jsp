@@ -85,7 +85,7 @@
       </div>
       <div id="gymBody" style="overflow: hidden;">
         <html:form action="/tsukibetsuShiftNyuuryokuInit.do" >
-          <div style="margin-left:25px;">
+          <div style="margin-left:10px;">
             <div style="height: 25px;">
               表示年月：
               <bean:define id="sessionYearMonth" name="tsukibetsuShiftNyuuryokuForm" property="yearMonth" type="String"/>
@@ -98,9 +98,9 @@
             </div>
             
             <!-- ここから新規 -->
-            <table width="1100px" cellpadding="0" cellspacing="0" border="1">
+            <table width="1320px" cellpadding="0" cellspacing="0" border="1">
 				<tr class="tblHeader">
-					<td ></td>
+					<td width="120px"></td>
 					<td width="40px" align="center">1</td>
 					<td width="40px" align="center">2</td>
 					<td width="40px" align="center">3</td>
@@ -175,6 +175,8 @@ if (dateBeanListSize == 31) {
 						</td>
 					</logic:iterate>
 				</tr>
+				
+				
 				<logic:iterate
 					offset="offset"
 					id="tsukibetsuShiftNyuuryokuBeanList"
@@ -582,7 +584,12 @@ if (dateBeanListSize >= 31) {
 				</logic:iterate>
 			</table>
           </div>
+          
+          
         </html:form>
+        
+        
+        
         <div style="margin-left:50px;">
           <input value="凡例表示" type="button" class="lngButton"  onclick="openWindow()" />
         </div>
