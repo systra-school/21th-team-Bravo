@@ -30,9 +30,6 @@
 <body>
 		<div class="body"></div>
 	    <div class="grad"></div>
-	    <div class="header">
-	      <div>Login<span>Form</span></div>
-	    </div>
 	    <br>
 	    <div class="login">
 	        <html:form action="/login" onsubmit="return validateLoginForm(this)">
@@ -41,11 +38,9 @@
 		      <html:password property="password" size="16" redisplay="false" value=""/>
 		      <br/>
 		      <br/>
-		      <html:submit property="submit" value="ログイン" />
-		      <html:reset value="リセット" />
+		      <html:submit property="submit"  value="Login" />
 		    </html:form>
 	    </div>
-	    
 	    <div id="footer">
 	        <table>
 	          <tr>

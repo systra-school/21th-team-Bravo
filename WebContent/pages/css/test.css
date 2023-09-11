@@ -77,9 +77,9 @@ body{
   padding: 4px;
   margin-top: 10px;
 }
-.login input[type=button]{
-  width: 260px;
-  height: 35px;
+.login input[type=submit]{
+  width: 250px;
+  height: 30px;
   background: #fff;
   border: 1px solid #fff;
   cursor: pointer;
