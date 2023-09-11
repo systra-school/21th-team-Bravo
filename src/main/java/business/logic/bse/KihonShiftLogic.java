@@ -15,11 +15,9 @@ import java.util.List;
 import java.util.Map;
 
 import business.db.dao.bse.KihonShiftDao;
-import business.db.dao.mst.ShiftMstMntDao;
 import business.db.dao.mth.TsukibetsuShiftDao;
 import business.dto.LoginUserDto;
 import business.dto.bse.KihonShiftDto;
-import business.dto.mst.ShiftMstMntDto;
 import business.dto.mth.TsukibetsuShiftDto;
 import business.logic.utils.CheckUtils;
 import exception.CommonException;
@@ -102,14 +100,86 @@ public class KihonShiftLogic {
 
     }
     
+    /*@param tsukibetsuShiftDtoMap 
+     *  JSPページで表示するデータ / return
+     * 
+     * @param startWeek 
+     * 月初めの曜日を取得/ 0...日曜日  6...土曜日 
+     * 
+     * @param ShiftUtilWeekArrays
+     * ShiftUtilWeekArrays[A][B]
+     * [A]...従業員の配列
+     * [B]...日曜日～土曜日 までの配列
+     * 
+     * @param tsukibetsuShiftDtoList
+     * tsukibetsuShiftDtoMapのList<TsukibetsuShiftDto>に格納するList
+     * 
+     * @param oldShainId
+     * tsukibetsuShiftDtoMap のString に格納するObject
+     * dto.getShainId() から取得する
+     * 
+     * @return tsukibetsuShiftDtoMap
+     * @author ota_naoki
+     * */
     public Map<String, List<TsukibetsuShiftDto>> KihonShiftDtoMap(String yearMonth, boolean shiftFlg)
 			throws SQLException {
 
-		// 戻り値
 		Map<String, List<TsukibetsuShiftDto>> tsukibetsuShiftDtoMap = new LinkedHashMap<String, List<TsukibetsuShiftDto>>();
+		String[][] ShiftUtilWeekArrays = getShiftUtilWeekArrays();
+		String oldShainId = "";
+		int startWeek = getStartWeek(yearMonth);
+	    
+		int cnt = 0;
+		int week = startWeek;
 		
-		int startWeek = 0;
-		int year = Integer.parseInt(yearMonth.substring(0, 4));
+		TsukibetsuShiftDao dao = new TsukibetsuShiftDao();
+		List<TsukibetsuShiftDto> tsukibetsuShiftDtoList = dao.getShiftTblData(yearMonth, shiftFlg);
+
+		// 一時領域
+		List<TsukibetsuShiftDto> tmpList = new ArrayList<TsukibetsuShiftDto>();
+
+		for (TsukibetsuShiftDto dto : tsukibetsuShiftDtoList) {
+			if (CheckUtils.isEmpty(oldShainId)) {
+				// 社員IDが空のとき（初回）
+				week = startWeek;
+				oldShainId = dto.getShainId();
+			} else {
+				if (!(oldShainId.equals(dto.getShainId()))) {
+					// 別社員のデータのとき
+					// 別社員時の処理
+					cnt++;
+					week = startWeek;
+					oldShainId = dto.getShainId();
+					tmpList = new ArrayList<TsukibetsuShiftDto>();
+					tsukibetsuShiftDtoMap.put(oldShainId, tmpList);
+				}
+			}
+			dto.setShiftId(ShiftUtilWeekArrays[cnt][week]);
+			tmpList.add(dto);
+			
+			//週のループ
+			if (week != 6) {
+				week++;
+			} else {
+				week = 0;
+			}
+		}
+		if (!CheckUtils.isEmpty(oldShainId)) {
+			// 最後分を追加する
+			tsukibetsuShiftDtoMap.put(oldShainId, tmpList);
+		}
+
+		return tsukibetsuShiftDtoMap;
+	}
+    
+    /* 月初めの曜日を取得
+     * 
+     * @return startWeek;
+     * @author ota_naoki
+     * */
+    public int getStartWeek(String yearMonth) {
+    	int startWeek = -1;
+    	int year = Integer.parseInt(yearMonth.substring(0, 4));
 		int month = Integer.parseInt(yearMonth.substring(4, 6));
 		
         Calendar calendar = Calendar.getInstance();
@@ -140,110 +210,44 @@ public class KihonShiftLogic {
                 startWeek = 6;
                 break;
         }
-	    
-		
-		// Dao
-		TsukibetsuShiftDao dao = new TsukibetsuShiftDao();
-		KihonShiftDao kihonDao = new KihonShiftDao();
-		ShiftMstMntDao shiftMstDao = new ShiftMstMntDao();
-
-		// シフト情報を取得する。
-		List<TsukibetsuShiftDto> tsukibetsuShiftDtoList = dao.getShiftTblData(yearMonth, shiftFlg);
+        return startWeek;
+    }
+   
+    /* ShiftUtilWeekArrays の配列を返す。
+     * 
+     * ShiftUtilWeekArrays[A][B]
+     * [A]...従業員の配列
+     * [B]...日曜日～土曜日 までの配列
+     * 
+     * @return ShiftUtilWeekArrays
+     * @author ota_naoki
+     * */
+    
+    public String[][] getShiftUtilWeekArrays() throws SQLException{
+    	//Daoオブジェクト生成
+    	KihonShiftDao kihonDao = new KihonShiftDao();
 		// 基本シフトのDto(一週間分)
 		Map<String, KihonShiftDto> kihonShiftDtoList = kihonDao.getKihonShiftDataList();
-		// シフトマスタのDto
-		List<ShiftMstMntDto> ShiftMstDtoList = shiftMstDao.getAllList();
-
-		// シフトマスタ(m_shift)の配列作成
-		// 配列の長さを取得
-		int arraylength = ShiftMstDtoList.size();
-		// index[n][0]...ShiftId index[n][1]...symbol
-		String[][] ShiftMstMntArrays = new String[arraylength][2];
-		// カウント変数の作成
-		int cnt = 0;
-		for (ShiftMstMntDto tmpShiftMst : ShiftMstDtoList) {
-			ShiftMstMntArrays[cnt][0] = tmpShiftMst.getShiftId();
-			ShiftMstMntArrays[cnt][1] = tmpShiftMst.getSymbol();
-
-			cnt++;
-		}
 
 		// 基本シフト(m_base_shift)の配列作成。週は定数(七日)
 		// 配列の長さを取得
-		arraylength = kihonShiftDtoList.values().size();
+		int  arraylength = kihonShiftDtoList.values().size();
 		// index[n][0]~[n][6] ... 月曜日～日曜日までの基本シフト
-		String[][] shiftmstArrays = new String[arraylength][7];
+		String[][] ShiftUtilWeekArrays = new String[arraylength][7];
 		// カウントの初期化
-		cnt = 0;
+		int  cnt = 0;
 		// 社員ごとの基本シフトの配列化
 		for (KihonShiftDto tmpKihonShift : kihonShiftDtoList.values()) {
-			shiftmstArrays[cnt][1] = tmpKihonShift.getShiftIdOnMonday();
-			shiftmstArrays[cnt][2] = tmpKihonShift.getShiftIdOnTuesday();
-			shiftmstArrays[cnt][3] = tmpKihonShift.getShiftIdOnWednesday();
-			shiftmstArrays[cnt][4] = tmpKihonShift.getShiftIdOnThursday();
-			shiftmstArrays[cnt][5] = tmpKihonShift.getShiftIdOnFriday();
-			shiftmstArrays[cnt][6] = tmpKihonShift.getShiftIdOnSaturday();
-			shiftmstArrays[cnt][0] = tmpKihonShift.getShiftIdOnSunday();
+			ShiftUtilWeekArrays[cnt][0] = tmpKihonShift.getShiftIdOnSunday();
+			ShiftUtilWeekArrays[cnt][1] = tmpKihonShift.getShiftIdOnMonday();
+			ShiftUtilWeekArrays[cnt][2] = tmpKihonShift.getShiftIdOnTuesday();
+			ShiftUtilWeekArrays[cnt][3] = tmpKihonShift.getShiftIdOnWednesday();
+			ShiftUtilWeekArrays[cnt][4] = tmpKihonShift.getShiftIdOnThursday();
+			ShiftUtilWeekArrays[cnt][5] = tmpKihonShift.getShiftIdOnFriday();
+			ShiftUtilWeekArrays[cnt][6] = tmpKihonShift.getShiftIdOnSaturday();
 
 			cnt++;
 		}
-
-		String oldShainId = "";
-
-		// 一時領域
-		List<TsukibetsuShiftDto> tmpList = new ArrayList<TsukibetsuShiftDto>();
-
-		// DB取得より取得する値を各社員づつ区切る
-		cnt = 0;
-		int week = startWeek;
-		
-		for (TsukibetsuShiftDto dto : tsukibetsuShiftDtoList) {
-			if (CheckUtils.isEmpty(oldShainId)) {
-				// 社員IDが空のとき（初回）
-				week = startWeek;
-				oldShainId = dto.getShainId();
-
-			} else {
-				if (!(oldShainId.equals(dto.getShainId()))) {
-					// 別社員のデータのとき
-					// 前の社員分をマップにつめる
-					week = startWeek;
-					cnt++;
-					tsukibetsuShiftDtoMap.put(oldShainId, tmpList);
-
-					// oldShainId を入れ替える
-					oldShainId = dto.getShainId();
-
-					// 新しい社員のデータを追加していく
-					tmpList = new ArrayList<TsukibetsuShiftDto>();
-
-				}
-				// KihonShiftはここで shiftid symbol(Viewで表示されるアイコン（平、黒）) shiftName(SH000X) を書き換える
-				
-			}
-			dto.setShiftId(shiftmstArrays[cnt][week]);
-			//swich
-			for(String[] symbol : ShiftMstMntArrays) {
-				if(symbol[0].equals(shiftmstArrays[cnt][week])) {
-					dto.setSymbol(symbol[1]);
-					break;
-				}
-			}
-			dto.setSymbol(shiftmstArrays[cnt][1]);
-			tmpList.add(dto);
-			
-			if (week != 6) {
-				week++;
-			} else {
-				week = 0;
-			}
-		}
-
-		if (!CheckUtils.isEmpty(oldShainId)) {
-			// 最後分を追加する
-			tsukibetsuShiftDtoMap.put(oldShainId, tmpList);
-		}
-
-		return tsukibetsuShiftDtoMap;
-	}
+		return ShiftUtilWeekArrays;
+    }
 }
