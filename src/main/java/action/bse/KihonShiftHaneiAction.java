@@ -50,9 +50,17 @@ public class KihonShiftHaneiAction extends TsukibetsuShiftNyuuryokuAbstractActio
      * @param form アクションフォーム
      * @param req リクエスト
      * @param res レスポンス
+     * @param yearMonth  フォームから指定された年月を、yyyymm 形式で取得
+     * @param tsukibetsuShiftDtoMap 基本シフトIDを取得する
+     * 第二引数 
+     * true... t_shift/ 希望シフト取得
+     * false... t_shift/シフト取得
+     * @param shiftCmbMap JSPで使う m_shift shiftid/symbol を格納
+     * @param yearMonthCmbMap 当月から直近三か月の年月を格納
      * @return アクションフォワード
      * @author naraki
      */
+	//修正 ota_naoki
     public ActionForward execute(ActionMapping mapping, ActionForm form,
             HttpServletRequest req, HttpServletResponse res) throws Exception {
 
@@ -70,49 +78,36 @@ public class KihonShiftHaneiAction extends TsukibetsuShiftNyuuryokuAbstractActio
         // フォーム
         TsukibetsuShiftNyuuryokuForm tsukibetsuShiftForm = (TsukibetsuShiftNyuuryokuForm) form;
         
-        //修正 ota_naoki
-        //修正前
-        // String yearMonth = CommonUtils.getFisicalDay(CommonConstant.yearMonthNoSl);
-        //CommonConstant.yearMonthNoSl) ... 現在年月を yyyymm 形式で取得
         // 対象年月
         String yearMonth = CommonUtils.getFisicalDay(tsukibetsuShiftForm.getYearMonth());
 
-        // ロジック生成(基本シフト)
+        // 基本シフトロジック生成
         KihonShiftLogic kihonShiftLogic = new KihonShiftLogic();
 
         // 対象年月の月情報を取得する。
         List<DateBean> dateBeanList = CommonUtils.getDateBeanList(yearMonth);
         
         // 基本シフトIDを取得する
-        //第二引数 falseをtrueにするでは駄目
-        //始まりの曜日を送って回す(提案)
         Map<String,List<TsukibetsuShiftDto>> tsukibetsuShiftDtoMap = kihonShiftLogic.KihonShiftDtoMap(yearMonth, true);
         
         //viewで表示する社員の一月の予定のlist
-        //このままで大丈夫。なはず。
         List<TsukibetsuShiftNyuuryokuBean> tsukibetsuShiftBeanList = new ArrayList<TsukibetsuShiftNyuuryokuBean>();
 
         // セレクトボックスの取得
         ComboListUtilLogic comboListUtils = new ComboListUtilLogic();
-        //m_SHIFT をオブジェクト化
+        
         Map<String, String> shiftCmbMap = comboListUtils.getComboShift(true);
         Map<String, String> yearMonthCmbMap = comboListUtils.getComboYearMonth(CommonUtils.getFisicalDay(CommonConstant.yearMonthNoSl), 3, ComboListUtilLogic.KBN_YEARMONTH_NEXT, false);
         
-        //
         if (CheckUtils.isEmpty(tsukibetsuShiftDtoMap)) {
             // データなし
             TsukibetsuShiftNyuuryokuBean tsukibetsuShiftBean = new TsukibetsuShiftNyuuryokuBean();
             tsukibetsuShiftBean.setShainId(loginUserDto.getShainId());
             tsukibetsuShiftBean.setShainName(loginUserDto.getShainName());
             tsukibetsuShiftBean.setRegistFlg(true);
-
             tsukibetsuShiftBeanList.add(tsukibetsuShiftBean);
         } else {
             // データあり
-        	/*
-        	 * tsukibetsuShiftDtoMap...
-        	 * loginUserDto...
-        	 * */
             tsukibetsuShiftBeanList = dtoToBean(tsukibetsuShiftDtoMap, loginUserDto);
         }
 
