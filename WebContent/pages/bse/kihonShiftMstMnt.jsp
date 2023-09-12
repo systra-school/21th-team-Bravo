@@ -141,37 +141,37 @@
                       <bean:write property="shainName" name="kihonShiftMstMntBeanList"/>
                     </td>
                     <td width="50px" align="center">
-                      <html:select property="shiftIdOnMonday" name="kihonShiftMstMntBeanList" indexed="true">
+                      <html:select property="shiftIdOnMonday" name="kihonShiftMstMntBeanList" indexed="true" style="font-family: 'MS ゴシック', sans-serif;">
                       <html:optionsCollection name="kihonShiftMstMntForm" property="shiftCmbMap" value="key" label="value"/>
                       </html:select>
                     </td>
                     <td width="50px" align="center">
-                      <html:select property="shiftIdOnTuesday" name="kihonShiftMstMntBeanList" indexed="true">
+                      <html:select property="shiftIdOnTuesday" name="kihonShiftMstMntBeanList" indexed="true" style="font-family: 'MS ゴシック', sans-serif;">
                       <html:optionsCollection name="kihonShiftMstMntForm" property="shiftCmbMap" value="key" label="value"/>
                       </html:select>
                     </td>
                     <td width="50px" align="center">
-                      <html:select property="shiftIdOnWednesday" name="kihonShiftMstMntBeanList" indexed="true">
+                      <html:select property="shiftIdOnWednesday" name="kihonShiftMstMntBeanList" indexed="true" style="font-family: 'MS ゴシック', sans-serif;">
                       <html:optionsCollection name="kihonShiftMstMntForm" property="shiftCmbMap" value="key" label="value"/>
                       </html:select>
                     </td>
                     <td width="50px" align="center">
-                      <html:select property="shiftIdOnThursday" name="kihonShiftMstMntBeanList" indexed="true">
+                      <html:select property="shiftIdOnThursday" name="kihonShiftMstMntBeanList" indexed="true" style="font-family: 'MS ゴシック', sans-serif;">
                       <html:optionsCollection name="kihonShiftMstMntForm" property="shiftCmbMap" value="key" label="value"/>
                       </html:select>
                     </td>
                     <td width="50px" align="center">
-                      <html:select property="shiftIdOnFriday" name="kihonShiftMstMntBeanList" indexed="true">
+                      <html:select property="shiftIdOnFriday" name="kihonShiftMstMntBeanList" indexed="true" style="font-family: 'MS ゴシック', sans-serif;">
                       <html:optionsCollection name="kihonShiftMstMntForm" property="shiftCmbMap" value="key" label="value"/>
                       </html:select>
                     </td>
                     <td width="50px" align="center">
-                      <html:select property="shiftIdOnSaturday" name="kihonShiftMstMntBeanList" indexed="true">
+                      <html:select property="shiftIdOnSaturday" name="kihonShiftMstMntBeanList" indexed="true" style="font-family: 'MS ゴシック', sans-serif;">
                       <html:optionsCollection name="kihonShiftMstMntForm" property="shiftCmbMap" value="key" label="value"/>
                       </html:select>
                     </td>
                     <td width="50px" align="center">
-                      <html:select property="shiftIdOnSunday" name="kihonShiftMstMntBeanList" indexed="true">
+                      <html:select property="shiftIdOnSunday" name="kihonShiftMstMntBeanList" indexed="true" style="font-family: 'MS ゴシック', sans-serif;">
                       <html:optionsCollection name="kihonShiftMstMntForm" property="shiftCmbMap" value="key" label="value"/>
                       </html:select>
                     </td>
