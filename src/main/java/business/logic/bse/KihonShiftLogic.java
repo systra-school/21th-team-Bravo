@@ -150,8 +150,8 @@ public class KihonShiftLogic {
 					cnt++;
 					week = startWeek;
 					oldShainId = dto.getShainId();
-					tmpList = new ArrayList<TsukibetsuShiftDto>();
 					tsukibetsuShiftDtoMap.put(oldShainId, tmpList);
+					tmpList = new ArrayList<TsukibetsuShiftDto>();
 				}
 			}
 			dto.setShiftId(ShiftUtilWeekArrays[cnt][week]);
