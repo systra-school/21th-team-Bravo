@@ -14,6 +14,11 @@ errorbody {
     background-color: #FFFFFF;
 }
 
+.img{
+	width: 100%;
+    margin: 0px;
+    background-color: #fefefe;
+}
 
 /*
 * ヘッダー、フッター共通定義
@@ -22,7 +27,7 @@ errorbody {
     width: 100%;
     margin: 0px;
     padding: 5px;
-    background-color: #fffff0;
+    background-color: #fefefe;
 
 }
 
@@ -31,7 +36,7 @@ errorbody {
 */
 #header {
     top: 2px;
-    height: 40px;
+    height: 80px;
     width:100%;
 }
 #headLeft {
@@ -39,8 +44,9 @@ errorbody {
     text-align:left;
 }
 #headCenter {
-    font-size: 24px;
-    color: #FFFF00;
+	font-weight:bold;
+    font-size: 32px;
+    color: #5b5b5b;
     width:800px;
     text-align:center;
 	text-indent: 120px;

@@ -2,6 +2,7 @@
 <%@page contentType="text/html; charset=Shift_JIS" pageEncoding="Shift_JIS"%>
 <%@ page import="constant.RequestSessionNameConstant"%>
 <%@ page import="constant.CommonConstant"%>
+
 <%@taglib uri="http://struts.apache.org/tags-bean" prefix="bean"%>
 <%@taglib uri="http://struts.apache.org/tags-logic" prefix="logic"%>
 <%@taglib uri="http://struts.apache.org/tags-html" prefix="html"%>
@@ -18,6 +19,7 @@
 
     <title>メニュー画面</title>
     <link href="/kikin_test/pages/css/common.css" rel="stylesheet" type="text/css" />
+    
   </head>
   <body>
     <div id="wrapper">
@@ -31,13 +33,13 @@
             <logic:equal name="<%=RequestSessionNameConstant.SESSION_CMN_LOGIN_USER_INFO %>"
                          property="kengenId"
                          value="<%=CommonConstant.Kengen.KANRISYA.getId() %>">
-                メニュー(管理者)
+                Administrator screen
             </logic:equal>
 
             <logic:equal name="<%=RequestSessionNameConstant.SESSION_CMN_LOGIN_USER_INFO %>"
                          property="kengenId"
                          value="<%=CommonConstant.Kengen.IPPAN.getId() %>">
-                メニュー(一般)
+                General screen
             </logic:equal>
             </td>
             <td id="headRight">
@@ -48,8 +50,8 @@
         </table>
       </div>
       <div id="gymBody">
-            <div class="img" align="center">
-       			<img src="../css/menu.jsp" alt="image" height="300" width="500">
+      <div class="img" align="center">
+	            <html:img src="/kikin_test/pages/css/menu.jpg" height="300" width="1000" />
           	</div>
         <logic:equal name="<%=RequestSessionNameConstant.SESSION_CMN_LOGIN_USER_INFO %>"
                      property="kengenId"
