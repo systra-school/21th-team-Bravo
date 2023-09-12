@@ -11,6 +11,7 @@ errorbody {
 #wrapper {
     width:100%;
     padding:0px;
+    background-color: #FFFFFF;
 }
 
 
@@ -21,7 +22,8 @@ errorbody {
     width: 100%;
     margin: 0px;
     padding: 5px;
-    background-color: #66CCFF;
+    background-color: #fffff0;
+
 }
 
 /*
@@ -63,6 +65,7 @@ errorbody {
 #gymBody {
     height: 480px;
     overflow: auto;
+    background-color: #FFFFFF;
 }
 
 /*
@@ -71,6 +74,7 @@ errorbody {
 #footer {
     bottom: 1%;
     height: 90px;
+    
 }
 #footLeft {
     float:left;

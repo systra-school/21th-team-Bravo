@@ -48,10 +48,14 @@
         </table>
       </div>
       <div id="gymBody">
+            <div class="img" align="center">
+       			<img src="../css/menu.jsp" alt="image" height="300" width="500">
+          	</div>
         <logic:equal name="<%=RequestSessionNameConstant.SESSION_CMN_LOGIN_USER_INFO %>"
                      property="kengenId"
                      value="<%=CommonConstant.Kengen.KANRISYA.getId() %>">
           <div class="menuBlock">
+          
             <html:form action="/tsukibetsuShiftKakuninInit">
               <input type="submit" value="月別シフト確認" class="bigButton" />
             </html:form>
