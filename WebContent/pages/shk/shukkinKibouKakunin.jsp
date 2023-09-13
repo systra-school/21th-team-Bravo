@@ -54,7 +54,7 @@
     <style type="text/css">
  body {
 	margin: 0;
-	background-color: #66CCFF;
+	background-color: #bed6df;
 	
 }
 .main-table {

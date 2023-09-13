@@ -2,7 +2,7 @@
 * body定義
 */
 body {
-    background-color: #FFFFFF;
+    background-color: #bed6df;
     overflow: hidden;
     color: #5b5b5b;
 }
@@ -64,10 +64,10 @@ errorbody {
 * メニュー画面のボタン
 */
 .menuBlock {
-    margin-left:30px;
-    float:left;
-    text-align:"center";
-    padding:30px;
+    margin-left: 100px;
+    float: left;
+    text-align: "center";
+    padding: 17px;
 }
 
 /*

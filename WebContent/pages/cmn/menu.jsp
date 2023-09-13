@@ -19,7 +19,12 @@
 
     <title>ÉÅÉjÉÖÅ[âÊñ </title>
     <link href="/kikin_test/pages/css/common.css" rel="stylesheet" type="text/css" />
-    
+        <style type="text/css">
+ body {
+	margin: 0;
+	background-color: #bed6df;
+}
+    </style>
   </head>
   <body>
     <div id="wrapper">
@@ -130,7 +135,7 @@
 
         </logic:equal>
       </div>
-      <div id="footer">
+<!--      <div id="footer">
         <table>
           <tr>
             <td id="footLeft">
@@ -145,6 +150,7 @@
           </tr>
         </table>
       </div>
+      -->
     </div>
   </body>
 </html>
