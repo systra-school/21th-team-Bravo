@@ -178,17 +178,17 @@ errorbody {
 * ボタンサイズrロング
 */
 .lngButton {
-   display: flex;
+    display: flex;
     justify-content: center;
     align-items: center;
-    width: 250px;
-    margin:0 auto;
-    padding: .9em 2em;
+    width: 165px;
+    margin: 0 auto;
+    padding: 0.9em 2em;
     border: 1px solid #5b5b5b;
     border-radius: 5px;
-    background-color:#bed6df;
-    color: #5b5b5b;
-    font-size: 1em;
+    background-color: #BED6DF;
+    color: #5B5B5B;
+    font-size: 13px;
 }
 
 /*

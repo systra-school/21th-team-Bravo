@@ -92,6 +92,12 @@ if (listSize > intShowLength) {
     <title>ŒŽ•ÊƒVƒtƒg“ü—Í‰æ–Ê</title>
 
     <link href="/kikin_test/pages/css/common.css" rel="stylesheet" type="text/css" />
+      <style type="text/css">
+		.lngButton {
+			display: initial;
+		}
+
+	  </style>
   </head>
   <body>
     <div id="wrapper">

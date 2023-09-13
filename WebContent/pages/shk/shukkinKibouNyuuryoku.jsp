@@ -65,6 +65,14 @@
     <title>o‹ÎŠó–]“ú“ü—Í</title>
 
     <link href="/kikin_test/pages/css/common.css" rel="stylesheet" type="text/css" />
+     <style type="text/css">
+		.lngButton {
+			display: initial;
+		}
+		.smlButton {
+			display: initial;
+		}
+	  </style>
   </head>
   <body>
     <div id="wrapper">

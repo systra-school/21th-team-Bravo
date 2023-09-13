@@ -52,15 +52,19 @@
 
     <link href="/kikin_test/pages/css/common.css" rel="stylesheet" type="text/css" />
     <style type="text/css">
- body {
-	margin: 0;
-	background-color: #bed6df;
-	
-}
-.main-table {
-	font-size: 14px;
-	width: 87%;
-}
+		 body {
+			margin: 0;
+			background-color: #bed6df;
+		}
+		.main-table {
+			font-size: 14px;
+			width: 87%;
+		}
+		.lngButton {
+			display: initial;
+		}
+
+	  </style>
     </style>
   </head>
 <body>
