@@ -43,7 +43,7 @@
             </logic:equal>
             </td>
             <td id="headRight">
-              <input value="logout" type="button" class="smlButton"  onclick="logout()" />
+              <input value="ログアウト" type="button" class="smlButton"  onclick="logout()" />
               
             </td>
           </tr>

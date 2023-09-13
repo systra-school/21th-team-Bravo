@@ -4,6 +4,11 @@
 body {
     background-color: #FFFFFF;
     overflow: hidden;
+    color: #5b5b5b;
+}
+
+.basefontcolor{
+	color: #5b5b5b;
 }
 errorbody {
     background-color: red;
@@ -141,19 +146,18 @@ errorbody {
 * ボタンサイズ通常
 */
 .smlButton {
-  display: flex;
+    display: flex;
     justify-content: center;
     align-items: center;
-    width: 100px;
-    margin:0 auto;
-    padding: .9em 2em;
-    border: 1px solid #0f0e11;
+    width: 90px;
+    margin: 5px auto;
+    padding: 0.6em 1em;
+    border: 1px solid #5b5b5b;
     border-radius: 5px;
-    background-color: #bed6df;
-    color: #5b5b5b;
-    font-size: 1em;
+    background-color: #BED6DF;
+    color: #5B5B5B;
+    font-size: 12px;
 }
-
 /*
 * ボタンサイズ大
 */
@@ -161,17 +165,17 @@ errorbody {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 180px;
-    margin:0 auto;
-    padding: .9em 2em;
-    border: 1px solid #0f0e11;
+    width: 165px;
+    margin: 0 auto;
+    padding: 0.9em 2em;
+    border: 1px solid #5b5b5b;
     border-radius: 5px;
-    background-color: #bed6df;
-    color: #5b5b5b;
-    font-size: 1em;
+    background-color: #BED6DF;
+    color: #5B5B5B;
+    font-size: 13px;
 }
 /*
-* ボタンサイズロング
+* ボタンサイズrロング
 */
 .lngButton {
    display: flex;
@@ -180,9 +184,9 @@ errorbody {
     width: 250px;
     margin:0 auto;
     padding: .9em 2em;
-    border: 1px solid #0f0e11;
+    border: 1px solid #5b5b5b;
     border-radius: 5px;
-    background-color: #bed6df;
+    background-color:#bed6df;
     color: #5b5b5b;
     font-size: 1em;
 }
@@ -197,18 +201,25 @@ errorbody {
     width: 250px;
     margin:0 auto;
     padding: .9em 2em;
-    border: 1px solid #0f0e11;
+    border: 1px solid #5b5b5b;
     border-radius: 5px;
     background-color: #bed6df;
     color: #5b5b5b;
     font-size: 1em;
+}
+/*
+* テーブルのスタイル
+*/
+.table{
+	border-collapse: collapse;
+    border:1px solid #333;
 }
 
 /*
 * テーブルヘッダーのスタイル
 */
 .tblHeader {
-    background-color: #98FB98;
+    background-color: #7EA3C7;
     font-weight: bold;
 }
 
@@ -222,7 +233,7 @@ errorbody {
 * 文字色 黒
 */
 .fontBlack {
-    color: black;
+    color: #5b5b5b;
 }
 
 /*
