@@ -59,6 +59,7 @@
 		.main-table {
 			font-size: 14px;
 			width: 87%;
+			font-weight: bold;;
 		}
 		.smlButton {
 			display: initial;

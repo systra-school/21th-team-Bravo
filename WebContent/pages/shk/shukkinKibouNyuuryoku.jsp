@@ -612,7 +612,7 @@ if (dateBeanListSize >= 31) {
             </td>
             <td id="footRight">
             	<input value="o‹ÎŠó–]“úŽQÆ" type="button" class="lngButton" onclick="window.open('./shukkinKibouKakuninInit.do')" />
-            	<input value="“o˜^" type="button" class="smlButton"  onclick="submitRegist()" />
+            	<input value="“o˜^" type="button" class="lngButton"  onclick="submitRegist()" />
             </td>
           </tr>
         </table>
