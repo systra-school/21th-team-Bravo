@@ -40,6 +40,11 @@
     基本シフト登録
     </title>
     <link href="/kikin_test/pages/css/common.css" rel="stylesheet" type="text/css" />
+     <style type="text/css">
+		.smlButton {
+			display: initial;
+		}
+	  </style>
   </head>
   <body>
     <div id="wrapper">

@@ -60,7 +60,7 @@
 			font-size: 14px;
 			width: 87%;
 		}
-		.lngButton {
+		.smlButton {
 			display: initial;
 		}
 
@@ -271,7 +271,7 @@
 		</div>
 		<div id="footer">
 			<div style="width: 1170px; margin: 0 auto;">
-				<input value="–}—á•\Ž¦" type="button" class="lngButton" onclick="openWindow()" />
+				<input value="–}—á•\Ž¦" type="button" class="smlButton" onclick="openWindow()" />
 			</div>
 			<table>
 				<tr>

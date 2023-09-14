@@ -149,6 +149,11 @@
     <title>シフトマスタメンテナンス画面</title>
 
     <link href="/kikin_test/pages/css/common.css" rel="stylesheet" type="text/css" />
+    <style type="text/css">
+   		 #gymBody {
+   		 height: 430px;
+    	}
+   </style>
   </head>
   <body>
     <div id="wrapper">
