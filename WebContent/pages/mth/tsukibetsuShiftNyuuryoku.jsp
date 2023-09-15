@@ -95,6 +95,21 @@ if (listSize > intShowLength) {
       <style type="text/css">
 		.lngButton {
 			display: initial;
+		    width: 140px;
+	        font-size: 12px;
+		}
+		.subButton {
+			display: initial;
+			margin-left:600px;
+		    justify-content: center;
+		    align-items: center;
+		    width: 90px;
+		    padding: 0.6em 1em;
+		    border: 1px solid #5b5b5b;
+		    border-radius: 5px;
+		    background-color: #BED6DF;
+		    color: #5B5B5B;
+		    font-size: 12px;
 		}
 
 	  </style>
@@ -256,6 +271,8 @@ if (listSize > intShowLength) {
           <input value="–}—á•\Ž¦" type="button" class="lngButton"  onclick="openWindow()" />
           <input value="Šî–{ƒVƒtƒg”½‰f" type="button" class="lngButton"  onclick="submitKihonShift()"/>
           <input value="o‹ÎŠó–]“ú”½‰f" type="button" class="lngButton"  onclick="submitShukkinKibou()" />
+          <input value="“o˜^" type="button" class="subButton"  onclick="submitRegist()" />
+          
         </div>
         <table>
           <tr>
@@ -265,7 +282,6 @@ if (listSize > intShowLength) {
 
             </td>
             <td id="footRight">
-              <input value="“o˜^" type="button" class="smlButton"  onclick="submitRegist()" />
             </td>
           </tr>
         </table>
