@@ -52,8 +52,10 @@ public class ShainMstMntLogic {
                 	//追加：ota_naoki
                 	//該当社員IDのm_shift / t_shift を削除
                     shainMstMntDao.deleteMstShain(shainMstMntDto.getShainId());
+                    /*備考：必要な機能であるか再検討
                     shainMstMntDao.deleteMstShift(shainMstMntDto.getShainId());
-                    shainMstMntDao.deleteTsukibetuSgift(shainMstMntDto.getShainId());
+                    shainMstMntDao.deleteTsukibetuSgift(shainMstMntDto.getShainId());                     
+                      */
                     
                 } else {
                     // 更新
